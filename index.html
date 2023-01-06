@@ -32,7 +32,16 @@ function create(){
 
 function update(){
   if(gameState.cursors.down.isDown){
-    gameState.player.y += 1
+    gameState.player.y += 5
+  }
+  if(gameState.cursors.up.isDown){
+    gameState.player.y -= 5
+  }
+  if(gameState.cursors.right.isDown){
+    gameState.player.x += 5
+  }
+  if(gameState.cursors.left.isDown){
+    gameState.player.y -= 5
   }
 }
     </script>
