@@ -51,6 +51,11 @@ function update(){
   if(gameState.cursors.left.isDown){
     gameState.player.x -= 10
   }
+  //teleports you if you go to far
+  if(gameState.player.x < 0){
+    gameState.player.x = 100
+  }
+  //end of script
 }
     </script>
 
