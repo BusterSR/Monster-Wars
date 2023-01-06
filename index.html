@@ -53,7 +53,7 @@ function update(){
   }
   //teleports you if you go to far
   if(gameState.player.x < 0){
-    gameState.player.x = 100
+    gameState.player.x = config.scene.width - gameState.player.width;
   }
   //end of script
 }
