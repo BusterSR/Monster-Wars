@@ -1,2 +1,2 @@
 2D Movement
-https://creative-sopapillas-b0e44a.netlify.app/
+https://2d-movement.netlify.app
