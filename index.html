@@ -55,6 +55,9 @@ function update(){
   if(gameState.player.x < 0){
     gameState.player.x = config.scene.width - 500
   }
+  if(gameState.player.x > config.scene.width){
+    gameState.player.x = 0
+  }
   //end of script
 }
     </script>
