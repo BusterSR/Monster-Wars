@@ -55,6 +55,9 @@ function update(){
   if(gameState.player.x < 0){
     gameState.player.x = window.innerWidth
   }
+  if(gameState.player.x > window.innerWidth){
+    gameState.player.x = 0
+  }
   //end of script
 }
     </script>
