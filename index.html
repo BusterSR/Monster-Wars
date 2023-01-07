@@ -28,10 +28,18 @@
 }
 
 const gameState = {
+	//HEALTH BAR
+	health: 100,
+ 	maxHealth: 100,
+	//HEALTH BAR
 	score : 0
 };
 
 function create() {
+//HEALTH BAR
+  gameState.graphics = this.add.graphics();
+//HEALTH BAR
+	
   gameState.player = this.physics.add.sprite(window.innerWidth / 2, window.innerHeight / 2, "codey").setScale(0.5);
 //score
   gameState.scoreText = this.add.text(window.innerWidth / 40, window.innerHeight / 40, 'Fuel: 0', { fontSize: '5em', fill: 'rgb(50, 50, 50)' });
@@ -55,6 +63,22 @@ function create() {
 }
 
 function update() {
+//HEALTH BAR
+  gameState.graphics.clear();
+	
+// Draw the background for the health bar
+  gameState.graphics.fillStyle(0x000000, 1);
+  gameState.graphics.fillRect(10, 10, 200, 20);
+	
+// Calculate the width of the "full" part of the health bar
+  const healthPercentage = gameState.health / gameState.maxHealth;
+  const healthBarWidth = healthPercentage * 200;
+	
+ // Draw the "full" part of the health bar
+  gameState.graphics.fillStyle(0xff0000, 1);
+  gameState.graphics.fillRect(10, 10, healthBarWidth, 20);
+//HEALTH BAR
+	
   //fuel += 1
   if(fuel > 200){
 	  fuel = 200
