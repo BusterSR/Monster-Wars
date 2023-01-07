@@ -14,7 +14,7 @@
 <body>
 
     <script>
-	    let fuel = 100
+	    let fuel = 200
 	    function preload() {
   this.load.image(
     "platform",
@@ -54,9 +54,9 @@ function create() {
 }
 
 function update() {
-  fuel += 0.5
-  if(fuel > 100){
-	  fuel = 100
+  fuel += 1
+  if(fuel > 200){
+	  fuel = 200
   }
   // Add your conditional statements below:
   if (gameState.cursors.left.isDown || gameState.wasd.left.isDown) {
@@ -73,7 +73,7 @@ function update() {
   if (gameState.cursors.up.isDown || gameState.wasd.up.isDown) {
 	  if(fuel > 0){
 		   gameState.player.setVelocityY(-550);
-		   fuel -= 1
+		   fuel -= 2
 	  }
   } //else{
    // gameState.player.setVelocityY(0)
