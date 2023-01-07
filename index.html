@@ -28,11 +28,11 @@
 const gameState = {};
 
 function create() {
-  gameState.player = this.physics.add.sprite(window.innerWidth / 2, window.innerHeight / 4, "codey").setScale(0.5);
+  gameState.player = this.physics.add.sprite(window.innerWidth / 2, window.innerHeight / 2, "codey").setScale(0.5);
 
   const platforms = this.physics.add.staticGroup();
 
-  platforms.create(window.innerWidth / 2, window.innerHeight / 2, "platform");
+  platforms.create(window.innerWidth / 2, window.innerHeight / 0.5, "platform");
 
   //gameState.player.setCollideWorldBounds(true);
 
