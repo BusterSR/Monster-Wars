@@ -50,9 +50,9 @@ function create() {
 
 function update() {
   // Add your conditional statements below:
-  if (gameState.cursors.left.isDown) {
+  if (gameState.cursors.left.isDown || gameState.wasd.left.isDown) {
     gameState.player.setVelocityX(-400);
-  } else if (gameState.cursors.right.isDown){
+  } else if (gameState.cursors.right.isDown || gameState.wasd.right.isDown){
     gameState.player.setVelocityX(400)
   } else{
     gameState.player.setVelocityX(0)
