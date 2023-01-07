@@ -15,7 +15,7 @@
 
     <script>
 	    let fuel = 200
-	    let fuelCharge = 40
+	    let fuelCharge = 100
 	    function preload() {
   this.load.image(
     "platform",
@@ -62,7 +62,7 @@ function update() {
 	  fuelCharge = 0
   }
 	
-  if(fuelCharge < 40){
+  if(fuelCharge < 100){
 	  fuel += 5
 	  fuelCharge += 1
   }
@@ -80,7 +80,7 @@ function update() {
   gameState.scoreText.setText(`Score: ${gameState.score}`)
 	
   if (gameState.cursors.up.isDown || gameState.wasd.up.isDown) {
-	  if(fuel > 0 && fuelCharge === 40){
+	  if(fuel > 0 && fuelCharge === 100){
 		   gameState.player.setVelocityY(-550);
 		   fuel -= 2
 	  }
