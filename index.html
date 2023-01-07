@@ -59,7 +59,7 @@ function update() {
   }
 	
 	
-  if (gameState.cursors.up.isDown) {
+  if (gameState.cursors.up.isDown || gameState.wasd.up.isDown) {
     gameState.player.setVelocityY(-550);
   } //else{
    // gameState.player.setVelocityY(0)
