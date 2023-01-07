@@ -63,6 +63,7 @@ function update() {
   if (gameState.cursors.up.isDown || gameState.wasd.up.isDown) {
 	  if(fuel > 0){
 		   gameState.player.setVelocityY(-550);
+		   fuel -= 1
 	  }
   } //else{
    // gameState.player.setVelocityY(0)
