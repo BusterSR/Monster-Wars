@@ -76,7 +76,7 @@ function update() {
     gameState.player.setVelocityX(0)
   }
 //score
-  gameState.score = fuel
+  gameState.score = fuelCharge
   gameState.scoreText.setText(`Score: ${gameState.score}`)
 	
   if (gameState.cursors.up.isDown || gameState.wasd.up.isDown) {
