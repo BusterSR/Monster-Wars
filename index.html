@@ -50,6 +50,10 @@ function create() {
 }
 
 function update() {
+  fuel += 0.5
+  if(fuel > 100){
+	  fuel = 100
+  }
   // Add your conditional statements below:
   if (gameState.cursors.left.isDown || gameState.wasd.left.isDown) {
     gameState.player.setVelocityX(-400);
