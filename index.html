@@ -40,13 +40,19 @@ function create() {
 
   // Create your cursor object below:
   gameState.cursors = this.input.keyboard.createCursorKeys();
+  gameState.wasd = this.input.keyboard.addKeys({
+  up: 'W',
+  down: 'S',
+  left: 'A',
+  right: 'D'
+});
 }
 
 function update() {
   // Add your conditional statements below:
-  if (gameState.cursors.left.isDown || gameState.cursors.A.isDown) {
+  if (gameState.cursors.left.isDown) {
     gameState.player.setVelocityX(-400);
-  } else if (gameState.cursors.right.isDown || gameState.cursors.D.isDown){
+  } else if (gameState.cursors.right.isDown){
     gameState.player.setVelocityX(400)
   } else{
     gameState.player.setVelocityX(0)
