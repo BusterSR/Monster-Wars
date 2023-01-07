@@ -30,7 +30,7 @@ const gameState = {};
 function create() {
   gameState.player = this.physics.add.sprite(window.innerWidth / 2, window.innerHeight / 2, "codey").setScale(0.5);
 
-  const platforms = this.physics.add.staticGroup().setScale(0.5);;
+  const platforms = this.physics.add.staticGroup().setScale(0.5);
 
   platforms.create(window.innerWidth / 2, window.innerHeight - window.innerHeight / 7, "platform");
 //important thing
