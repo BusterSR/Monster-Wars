@@ -15,9 +15,6 @@
 
     <script>
     function preload() {
-  this.load.image('bug1', 'https://content.codecademy.com/courses/learn-phaser/physics/bug_1.png');
-  this.load.image('bug2', 'https://content.codecademy.com/courses/learn-phaser/physics/bug_2.png');
-  this.load.image('bug3', 'https://content.codecademy.com/courses/learn-phaser/physics/bug_3.png');
   this.load.image('platform', 'https://content.codecademy.com/courses/learn-phaser/physics/platform.png');
   this.load.image('codey', 'https://content.codecademy.com/courses/learn-phaser/physics/codey.png');
 }
@@ -40,32 +37,6 @@ function create() {
   this.physics.add.collider(gameState.player, platforms);
   
 	gameState.cursors = this.input.keyboard.createCursorKeys();
-
-  const bugs = this.physics.add.group();
-
-  function bugGen () {
-    const xCoord = Math.random() * 450;
-    bugs.create(xCoord, 10, 'bug1');
-  }
-
-  const bugGenLoop = this.time.addEvent({
-    delay: 100,
-    callback: bugGen,
-    callbackScope: this,
-    loop: true,
-  });
-
-  this.physics.add.collider(bugs, platforms, function (bug) {
-    bug.destroy();
-    gameState.score += 10;
-    gameState.scoreText.setText(`Score: ${gameState.score}`);
-  })
-  
-  this.physics.add.collider(gameState.player, bugs, () => {
-    bugGenLoop.destroy();
-    this.physics.pause();
-    this.add.text(180, 250, 'Game Over', { fontSize: '15px', fill: '#000000' });
-    this.add.text(152, 270, 'Click to Restart', { fontSize: '15px', fill: '#000000' });
     
 		// Add your code below:
     this.input.on('pointerup', () =>{
