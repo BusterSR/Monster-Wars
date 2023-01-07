@@ -26,11 +26,15 @@
   );
 }
 
-const gameState = {};
+const gameState = {
+	score : 0
+};
 
 function create() {
   gameState.player = this.physics.add.sprite(window.innerWidth / 2, window.innerHeight / 2, "codey").setScale(0.5);
-
+//score
+  gameState.scoreText = this.add.text(195, 485, 'Score: 0', { fontSize: '15px', fill: '#000000' });
+	
   const platforms = this.physics.add.staticGroup();
 
   platforms.create(window.innerWidth / 2, window.innerHeight - window.innerHeight / 5, "platform");
@@ -62,7 +66,9 @@ function update() {
   } else{
     gameState.player.setVelocityX(0)
   }
-	
+//score
+  gameState.score = fuel
+  gameState.scoreText.setText(`Score: ${gameState.score}`)
 	
   if (gameState.cursors.up.isDown || gameState.wasd.up.isDown) {
 	  if(fuel > 0){
