@@ -45,11 +45,18 @@ function create() {
 function update() {
   // Add your conditional statements below:
   if (gameState.cursors.left.isDown) {
-    gameState.player.setVelocityX(-160);
+    gameState.player.setVelocityX(-200);
   } else if (gameState.cursors.right.isDown){
-    gameState.player.setVelocityX(160)
+    gameState.player.setVelocityX(200)
   } else{
     gameState.player.setVelocityX(0)
+  }
+	
+	
+  if (gameState.cursors.up.isDown) {
+    gameState.player.setVelocityY(200);
+  } else{
+    gameState.player.setVelocityY(0)
   }
 }
 
