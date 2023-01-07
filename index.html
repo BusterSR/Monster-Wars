@@ -34,7 +34,7 @@ const gameState = {
 function create() {
   gameState.player = this.physics.add.sprite(window.innerWidth / 2, window.innerHeight / 2, "codey").setScale(0.5);
 //score
-  gameState.scoreText = this.add.text(window.innerWidth / 30, 485, 'Fuel: 0', { fontSize: '15px', fill: 'rgb(50, 50, 50)' });
+  gameState.scoreText = this.add.text(window.innerWidth / 40, 485, 'Fuel: 0', { fontSize: '15px', fill: 'rgb(50, 50, 50)' });
 	
   const platforms = this.physics.add.staticGroup();
 
