@@ -54,7 +54,7 @@ function create() {
 }
 
 function update() {
-  fuel += 1
+  //fuel += 1
   if(fuel > 200){
 	  fuel = 200
   }
@@ -71,7 +71,7 @@ function update() {
   gameState.scoreText.setText(`Score: ${gameState.score}`)
 	
   if (gameState.cursors.up.isDown || gameState.wasd.up.isDown) {
-	  if(fuel > 6){
+	  if(fuel > 0){
 		   gameState.player.setVelocityY(-550);
 		   fuel -= 2
 	  }
