@@ -80,7 +80,7 @@ function update() {
   gameState.scoreText.setText(`Score: ${gameState.score}`)
 	
   if (gameState.cursors.up.isDown || gameState.wasd.up.isDown) {
-	  if(fuel > 0 && fuelCharge = 20){
+	  if(fuel > 0 && fuelCharge === 20){
 		   gameState.player.setVelocityY(-550);
 		   fuel -= 2
 	  }
