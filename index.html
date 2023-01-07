@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>2D Movement</title>
+    <title>Platformer</title>
     <link rel="icon" type="image/x-icon" href="https://i.ibb.co/G7w6XDP/grass2.png">
     <style>
      html, body {
@@ -32,7 +32,7 @@ function create() {
 
   const platforms = this.physics.add.staticGroup();
 
-  platforms.create(window.innerWidth / 2, window.innerHeight / 2, "platform");
+  platforms.create(window.innerWidth / 2, window.innerHeight / 4, "platform");
 
   //gameState.player.setCollideWorldBounds(true);
 
