@@ -62,6 +62,10 @@ function create() {
 //HEALTH BAR
   gameState.graphics = this.add.graphics();
 //HEALTH BAR
+  if(gameOn === 0){
+  	gameState.startButton = this.add.sprite(window.innerWidth / 2, window.innerHeight / 2, "start").setScale(0.5);
+  }
+	
   if(gameOn === 1){
   	gameState.player = this.physics.add.sprite(window.innerWidth / 2, window.innerHeight / 2, "codey").setScale(0.5);
   }
