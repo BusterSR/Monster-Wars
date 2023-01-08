@@ -15,6 +15,7 @@
 
     <script>
 	    let fuel = 200
+	    let gameOn = 1
 	    let fuelCharge = 100
 	    function preload() {
 //BG
@@ -57,8 +58,9 @@ function create() {
 //HEALTH BAR
   gameState.graphics = this.add.graphics();
 //HEALTH BAR
-	
-  gameState.player = this.physics.add.sprite(window.innerWidth / 2, window.innerHeight / 2, "codey").setScale(0.5);
+  if(gameOn === 1){
+  	gameState.player = this.physics.add.sprite(window.innerWidth / 2, window.innerHeight / 2, "codey").setScale(0.5);
+  }
   //gameState.standing = this.physics.sprite(gameState.player.X, gameState.player.y, "codeyup").setScale(0.5);
 //score
   //gameState.scoreText = this.add.text(window.innerWidth / 40, window.innerHeight / 40, 'Fuel: 0', { fontSize: '5em', fill: 'rgb(50, 50, 50)' });
