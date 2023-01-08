@@ -54,7 +54,12 @@ const gameState = {
 function create() {
    
 //BG
-   //var background = game.add.tileSprite(0, 0, 800, 600, 'background');
+	
+  gameState.circle = this.add.circle(50, 50, 20, 0xFF0000);
+  gameState.circle.setInteractive();
+  gameState.circle.on('pointerup', function() {
+    this.fillColor = 0x00FF00;
+  });
 //BG
   //this.add.image(window.innerWidth / 2, window.innerHeight / 2, 'bg');
   var bg = this.add.image(window.innerWidth / 2, window.innerHeight / 2, 'bg');
