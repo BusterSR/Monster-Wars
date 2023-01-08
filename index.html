@@ -64,14 +64,14 @@ function create() {
 //HEALTH BAR
   if(gameOn === 0){
   	gameState.startButton = this.add.sprite(window.innerWidth / 2, window.innerHeight / 2, "start").setScale(0.65);
+  
+  	gameState.startButton.setInteractive()
+	
+ 	gameState.startButton.on('pointerup', function() {
+   		gameOn = 1
+   		this.scene.restart()
+	});
   }
-  //gameState.startButton.setInteractive()
-	
-  //gameState.startButton.on('pointerup', function() {
-    //gameOn = 1
-    //this.scene.restart()
-  //});
-	
   if(gameOn === 1){
   	gameState.player = this.physics.add.sprite(window.innerWidth / 2, window.innerHeight / 2, "codey").setScale(0.5);
   }
