@@ -17,6 +17,9 @@
 	    let fuel = 200
 	    let fuelCharge = 100
 	    function preload() {
+//BG
+  game.load.image('background', 'images/output-onlineimagetools (1).png');
+//BG
   this.load.image(
     "platform",
     src="images/planet (1).png"
@@ -36,6 +39,10 @@ const gameState = {
 };
 
 function create() {
+//BG
+   var background = game.add.tileSprite(0, 0, 800, 600, 'background');
+//BG
+	
 //HEALTH BAR
   gameState.graphics = this.add.graphics();
 //HEALTH BAR
