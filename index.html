@@ -63,9 +63,6 @@ function create() {
   //gameState.scoreText = this.add.text(window.innerWidth / 40, window.innerHeight / 40, 'Fuel: 0', { fontSize: '5em', fill: 'rgb(50, 50, 50)' });
 	
   const platforms = this.physics.add.staticGroup();
-  //IHJIUHGVGHUIUHGHUIHBV
-  var anim = gameState.player.animations.add('anim', ['codey', 'codeyup'], 1, true);
-  anim.play();
 
   platforms.create(window.innerWidth / 2, window.innerHeight - window.innerHeight / 5, "platform");
 //important thing
@@ -82,6 +79,9 @@ function create() {
   right: 'D'
 });
 }
+  //IHJIUHGVGHUIUHGHUIHBV
+  var anim = gameState.player.animations.add('anim', ['codey', 'codeyup'], 1, true);
+  anim.play();
 
 function update() {
 //HEALTH BAR
