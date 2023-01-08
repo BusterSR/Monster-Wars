@@ -92,22 +92,23 @@ function create() {
 	    
 function update() {
 //HEALTH BAR
-  gameState.graphics.clear();
+  if(gameOn === 1){
+  	gameState.graphics.clear();
 	
 // Draw the background for the health bar
-  gameState.graphics.fillStyle(666666, 1);
-  gameState.graphics.fillRect(10, 10, 400, 20);
+ 	 gameState.graphics.fillStyle(666666, 1);
+ 	 gameState.graphics.fillRect(10, 10, 400, 20);
 	
 // Calculate the width of the "full" part of the health bar
   //const healthPercentage = gameState.health / gameState.maxHealth;
-  const healthPercentage = fuel / gameState.maxHealth;
-  const healthBarWidth = healthPercentage * 200;
+ 	 const healthPercentage = fuel / gameState.maxHealth;
+ 	 const healthBarWidth = healthPercentage * 200;
 	
  // Draw the "full" part of the health bar
-  gameState.graphics.fillStyle(5656E1, 1);
-  gameState.graphics.fillRect(10, 10, healthBarWidth, 20);
+  	 gameState.graphics.fillStyle(5656E1, 1);
+ 	 gameState.graphics.fillRect(10, 10, healthBarWidth, 20);
 //HEALTH BAR
-	
+  }
   //fuel += 1
   if(fuel > 200){
 	  fuel = 200
