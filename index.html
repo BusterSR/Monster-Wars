@@ -20,6 +20,8 @@
 //BG
   //game.load.image('background', 'images/output-onlineimagetools (1).png');
 //BG
+  this.load.image('bg', 'output-onlineimagetools (1).png
+');
   this.load.image(
     "platform",
     src="images/planet (1).png"
@@ -42,6 +44,7 @@ function create() {
 //BG
    //var background = game.add.tileSprite(0, 0, 800, 600, 'background');
 //BG
+  this.add.image(200, 200, 'bg');
 	
 //HEALTH BAR
   gameState.graphics = this.add.graphics();
