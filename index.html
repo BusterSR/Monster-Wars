@@ -14,6 +14,7 @@
 <body>
 
     <script>
+	    // CREATE ONLY RUNS ONCE TO FIX GLITCH RESET GAME ON START
 	    let fuel = 200
 	    let gameOn = 0
 	    let fuelCharge = 100
@@ -68,6 +69,7 @@ function create() {
 	
   gameState.startButton.on('pointerup', function() {
     gameOn = 1
+    this.scene.restart()
   });
 	
   if(gameOn === 1){
