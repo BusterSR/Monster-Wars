@@ -32,6 +32,10 @@
     "codey",
     "https://i.ibb.co/2KV1PSv/Monster-Hunter-Squat-Walk2.png"
   );
+  this.load.image(
+    "codeyup",
+    src='images/Monster Hunter Squat Walk.png'
+  )
 }
 
 const gameState = {
@@ -43,6 +47,7 @@ const gameState = {
 };
 
 function create() {
+   
 //BG
    //var background = game.add.tileSprite(0, 0, 800, 600, 'background');
 //BG
@@ -58,6 +63,9 @@ function create() {
   //gameState.scoreText = this.add.text(window.innerWidth / 40, window.innerHeight / 40, 'Fuel: 0', { fontSize: '5em', fill: 'rgb(50, 50, 50)' });
 	
   const platforms = this.physics.add.staticGroup();
+  //IHJIUHGVGHUIUHGHUIHBV
+  var anim = gameState.player.animations.add('anim', ['codey', 'codeyup'], 1, true);
+  anim.play();
 
   platforms.create(window.innerWidth / 2, window.innerHeight - window.innerHeight / 5, "platform");
 //important thing
