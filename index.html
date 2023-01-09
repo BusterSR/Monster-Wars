@@ -82,18 +82,20 @@ function create() {
  	 platforms.create(window.innerWidth / 2, window.innerHeight - window.innerHeight / 5, "platform");
   }
 //important thing
-  gameState.player.setCollideWorldBounds(true);
+  if(gameOn === 1){
+  	gameState.player.setCollideWorldBounds(true);
 
-  this.physics.add.collider(gameState.player, platforms);
+  	this.physics.add.collider(gameState.player, platforms);
 
   // Create your cursor object below:
-  gameState.cursors = this.input.keyboard.createCursorKeys();
-  gameState.wasd = this.input.keyboard.addKeys({
-  up: 'W',
-  down: 'S',
-  left: 'A',
-  right: 'D'
-});
+  	gameState.cursors = this.input.keyboard.createCursorKeys();
+  	gameState.wasd = this.input.keyboard.addKeys({
+  	up: 'W',
+ 	down: 'S',
+  	left: 'A',
+  	right: 'D'
+	});
+  }
   //IHJIUHGVGHUIUHGHUIHBV
   //gameState.player.animations = this.animations;
   //var anim = gameState.player.animations.add('anim', ['codey', 'codeyup'], 1, true);
