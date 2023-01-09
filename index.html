@@ -65,9 +65,11 @@ function create() {
   	gameState.startButton.setInteractive()
 	
  	gameState.startButton.on('pointerdown', function() {
-		console.log('works')
+		console.log('1')
    		gameState.gameOn = 1
+		console.log('2')
    		this.scene.restart()
+		console.log('3')
 	});
   }
   if(gameOn === 1){
