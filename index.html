@@ -65,9 +65,9 @@ function create() {
   if(gameOn === 0){
   	gameState.startButton = this.add.sprite(window.innerWidth / 2, window.innerHeight / 2, "start").setScale(0.65);
   
-  	gameState.startButton.setInteractive()
+  	startButton.setInteractive()
 	
- 	gameState.startButton.on('pointerdown', function() {
+ 	startButton.on('pointerdown', function() {
    		gameState.gameOn = 1
    		//this.scene.restart()
 	});
