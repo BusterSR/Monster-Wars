@@ -80,11 +80,11 @@ function create() {
   const platforms = this.physics.add.staticGroup();
   if(gameOn === 1){
  	 platforms.create(window.innerWidth / 2, window.innerHeight - window.innerHeight / 5, "platform");
-  }
+  
 //important thing
   
-  gameState.player.setCollideWorldBounds(true);
-  
+  	 gameState.player.setCollideWorldBounds(true);
+  }
   this.physics.add.collider(gameState.player, platforms);
 
   // Create your cursor object below:
