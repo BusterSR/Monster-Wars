@@ -68,7 +68,7 @@ function create() {
 		console.log('1')
    		gameState.gameOn = 1
 		console.log('2')
-   		this.scene.restart()
+   		this.scene.start('gameScene');
 		console.log('3')
 	});
   }
@@ -175,9 +175,12 @@ const config = {
     },
   },
   scene: {
-    preload,
-    create,
+    preload: preload,
+    create: create,
     update,
+    gameScene: {
+      create: gameStart
+    }
   },
 };
 
