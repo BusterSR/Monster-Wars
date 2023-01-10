@@ -74,19 +74,23 @@ function create() {
 	  
 	//The button handling being clicked
   	gameState.startButton.setInteractive()
-        gameState.startButton.on('pointerdown', function() {
+	gameState.startButton.on('pointerdown', function() {
+    		gameState.gameOn = 1
+    		this.scene.restart(this, {}, 'previous')
+	}, this);
+        //gameState.startButton.on('pointerdown', function() {
 		
 		//Console logs to see where the thing breaks
-		console.log('1')
+		//console.log('1')
 		
 		//Game switching to planet with monsters (monsters not yet added)
-   		gameState.gameOn = 1
-		console.log('2')
+   		//gameState.gameOn = 1
+		//console.log('2')
 		
 		//Console says the restart is not defined
-		this.scene.restart()
-		console.log('3')
-	});
+		//this.scene.restart()
+		//console.log('3')
+	//});
   }
   
   //Loads player if the game is on the planet
