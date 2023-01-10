@@ -76,8 +76,11 @@ function create() {
   	gameState.startButton.setInteractive()
 	gameState.startButton.on('pointerdown', function() {
     		gameState.gameOn = 1
+		console.log(gameOn)
     		this.scene.restart(this, {}, 'previous')
+		console.log('reset')
 	}, this);
+	  
         //gameState.startButton.on('pointerdown', function() {
 		
 		//Console logs to see where the thing breaks
