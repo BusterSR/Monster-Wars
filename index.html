@@ -75,7 +75,7 @@ function create() {
 	//The button handling being clicked
   	gameState.startButton.setInteractive()
 	gameState.startButton.on('pointerdown', function() {
-    		gameState.gameOn = 1
+    		gameOn = 1
 		console.log(gameOn)
     		this.scene.restart(this, {}, 'previous')
 		console.log('reset')
