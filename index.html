@@ -64,14 +64,15 @@ function create() {
   
   	gameState.startButton.setInteractive()
 	
- 	gameState.startButton.on('pointerdown', function() {
-		console.log('1')
-   		gameState.gameOn = 1
-		console.log('2')
+	game.input.onDown.add(this.restartGame, this);
+ 	//gameState.startButton.on('pointerdown', function() {
+		//console.log('1')
+   		//gameState.gameOn = 1
+		//console.log('2')
 		//NOT DEFINED  V
    		//this.scene.start('gameScene');
-		this.scene.restart()
-		console.log('3')
+		//this.scene.restart()
+		//console.log('3')
 	});
   }
   if(gameOn === 1){
