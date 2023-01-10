@@ -15,13 +15,16 @@
 
     <script>
 	    // CREATE ONLY RUNS ONCE TO FIX GLITCH RESET GAME ON START
+	    
+	    //Some variables being set
 	    let fuel = 200
 	    let gameOn = 0
 	    let fuelCharge = 100
+	    
+	    //The preload
 	    function preload() {
-//BG
-  //game.load.image('background', 'images/output-onlineimagetools (1).png');
-//BG
+  
+  //The images being loaded
   this.load.image(
     'bg', 
     src='images/Screen Shot 2023-01-07 at 6.27.22 PM.png'
@@ -38,61 +41,71 @@
     "codeyup",
     src='images/Monster Hunter Squat Walk.png'
   )
-  this.load.image("start", "images/start button.png");
+  this.load.image(
+    "start", 
+    "images/start button.png"
+  );
+		    
 }
 
+//The game state being created
 const gameState = {
-	//HEALTH BAR
 	health: 100,
  	maxHealth: 100,
-	//HEALTH BAR
 	score : 0
 };
 
+//The create function
 function create() {
    
-//BG
-//BG
-  //this.add.image(window.innerWidth / 2, window.innerHeight / 2, 'bg');
+  //The background being created
   var bg = this.add.image(window.innerWidth / 2, window.innerHeight / 2, 'bg');
 	
-//HEALTH BAR
+  //Stuff for the health bar
   gameState.graphics = this.add.graphics();
-//HEALTH BAR
-  if(gameOn === 0){
-  	gameState.startButton = this.add.sprite(window.innerWidth / 2, window.innerHeight / 2, "start").setScale(0.65);
-  
-  	gameState.startButton.setInteractive()
 	
-	game.input.onDown.add(this.restartGame, this);
- 	//gameState.startButton.on('pointerdown', function() {
-		//console.log('1')
-   		//gameState.gameOn = 1
-		//console.log('2')
-		//NOT DEFINED  V
-   		//this.scene.start('gameScene');
-		//this.scene.restart()
-		//console.log('3')
-	//});
+  //Stuff that loads if the game is on the title screen
+  if(gameOn === 0){
+	
+	//Start button code
+  	gameState.startButton = this.add.sprite(window.innerWidth / 2, window.innerHeight / 2, "start").setScale(0.65);
+	  
+	//The button handling being clicked
+  	gameState.startButton.setInteractive()
+        gameState.startButton.on('pointerdown', function() {
+		
+		//Console logs to see where the thing breaks
+		console.log('1')
+		
+		//Game switching to planet with monsters (monsters not yet added)
+   		gameState.gameOn = 1
+		console.log('2')
+		
+		//Console says the restart is not defined
+		this.scene.restart()
+		console.log('3')
+	});
   }
+  
+  //Loads player if the game is on the planet
   if(gameOn === 1){
   	gameState.player = this.physics.add.sprite(window.innerWidth / 2, window.innerHeight / 2, "codey").setScale(0.5);
   }
-  //gameState.standing = this.physics.sprite(gameState.player.X, gameState.player.y, "codeyup").setScale(0.5);
-//score
-  gameState.scoreText = this.add.text(window.innerWidth / 40, window.innerHeight / 40, 'Fuel: 0', { fontSize: '5em', fill: 'rgb(50, 50, 50)' });
+  
+  //Not in use right now
+  //gameState.scoreText = this.add.text(window.innerWidth / 40, window.innerHeight / 40, 'Fuel: 0', { fontSize: '5em', fill: 'rgb(50, 50, 50)' });
 	
+  //Loads planet if the game is on the planet
   const platforms = this.physics.add.staticGroup();
   if(gameOn === 1){
  	 platforms.create(window.innerWidth / 2, window.innerHeight - window.innerHeight / 5, "platform");
-  
-//important thing
-  
   	 gameState.player.setCollideWorldBounds(true);
   }
+	
+  //Makes sure the player and planet colide
   this.physics.add.collider(gameState.player, platforms);
 
-  // Create your cursor object below:
+  //Adds buttons
   gameState.cursors = this.input.keyboard.createCursorKeys();
   gameState.wasd = this.input.keyboard.addKeys({
   up: 'W',
@@ -100,34 +113,35 @@ function create() {
   left: 'A',
   right: 'D'
   });
-  //IHJIUHGVGHUIUHGHUIHBV
+  
+  //For later once I learn animations
   //gameState.player.animations = this.animations;
   //var anim = gameState.player.animations.add('anim', ['codey', 'codeyup'], 1, true);
   //anim.play();
 
 }
 	    
-	    
+//The update function
 function update() {
-//HEALTH BAR
+	
+  //Only updates planet stuff if game is on the planet
   if(gameOn === 1){
   	gameState.graphics.clear();
 	
-// Draw the background for the health bar
+         //Draw the background for the fuel bar
  	 gameState.graphics.fillStyle(666666, 1);
  	 gameState.graphics.fillRect(10, 10, 400, 20);
 	
-// Calculate the width of the "full" part of the health bar
-  //const healthPercentage = gameState.health / gameState.maxHealth;
+         //Calculate the width of the full part of the fuel bar
  	 const healthPercentage = fuel / gameState.maxHealth;
  	 const healthBarWidth = healthPercentage * 200;
 	
- // Draw the "full" part of the health bar
+         //Draw the full part of the fuel bar
   	 gameState.graphics.fillStyle(5656E1, 1);
  	 gameState.graphics.fillRect(10, 10, healthBarWidth, 20);
-//HEALTH BAR
   }
-  //fuel += 1
+  
+  //Makes sure the fuel runs smoothly
   if(fuel > 200){
 	  fuel = 200
   } else if(fuel < 1){
@@ -135,13 +149,12 @@ function update() {
   } else{
 	  fuel += 0.25
   }
-	
   if(fuelCharge < 100){
 	  fuel += 5
 	  fuelCharge += 1
   }
 	
-  // Add your conditional statements below:
+  //Adds what the buttons do
   if(gameOn === 1){
   	if (gameState.cursors.left.isDown || gameState.wasd.left.isDown) {
     		gameState.player.setVelocityX(-400);
@@ -151,20 +164,21 @@ function update() {
     		gameState.player.setVelocityX(0)
   	}
   }
-//score
+	
+  //Not currently in use
   gameState.score = gameOn
   gameState.scoreText.setText(`Fuel: ${gameState.score}`)
 	
+  //Makes sure the fuel works more
   if (gameState.cursors.up.isDown || gameState.wasd.up.isDown) {
 	  if(fuel > 0 && fuelCharge === 100){
 		   gameState.player.setVelocityY(-550);
 		   fuel -= 2
 	  }
-  } //else{
-   // gameState.player.setVelocityY(0)
-  //}
+  }
 }
 
+//The config function
 const config = {
   type: Phaser.AUTO,
   width: window.innerWidth,
@@ -177,6 +191,7 @@ const config = {
       enableBody: true,
     },
   },
+  //I forget if this is in use or not
   scene: {
     preload: preload,
     create: create,
@@ -187,9 +202,9 @@ const config = {
   },
 };
 
+//Starts the game
 const game = new Phaser.Game(config);
 
     </script>
-
 </body>
 </html>
