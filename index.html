@@ -80,20 +80,6 @@ function create() {
     		this.scene.restart(this, {}, 'previous')
 		console.log('reset')
 	}, this);
-	  
-        //gameState.startButton.on('pointerdown', function() {
-		
-		//Console logs to see where the thing breaks
-		//console.log('1')
-		
-		//Game switching to planet with monsters (monsters not yet added)
-   		//gameState.gameOn = 1
-		//console.log('2')
-		
-		//Console says the restart is not defined
-		//this.scene.restart()
-		//console.log('3')
-	//});
   }
   
   //Loads player if the game is on the planet
@@ -172,6 +158,11 @@ function update() {
   	} else{
     		gameState.player.setVelocityX(0)
   	}
+  }
+  
+  //Checks if you fall off the cliff
+  if(window.innerHeight < gameState.player.X){
+	  
   }
 	
   //Not currently in use
