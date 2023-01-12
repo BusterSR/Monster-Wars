@@ -59,6 +59,10 @@ const gameState = {
 
 //The create function
 function create() {
+	
+  game.input.on('pointermove', function (pointer) {
+  	console.log("x position: " + pointer.x);
+  });
    
   //The background being created
   var bg = this.add.image(window.innerWidth / 2, window.innerHeight / 2, 'bg');
@@ -120,7 +124,7 @@ function create() {
 function update() {
 	
   //Code to make the background move with the mouse
-  console.log(pointer.x)
+  //console.log(pointer.x)
   //console.log(game.input.x);
   //gameState.bg.x = 
 	
