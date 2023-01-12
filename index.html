@@ -148,6 +148,11 @@ function update() {
 	  fuel += 5
 	  fuelCharge += 1
   }
+
+  //TEST
+  if(window.innerHeight < gameState.player.y && gameOn === 1){
+  	console.log('Death')
+  }
 	
   //Adds what the buttons do
   if(gameOn === 1){
