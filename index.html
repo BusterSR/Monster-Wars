@@ -18,6 +18,7 @@
 	    //Some variables being set
 	    let fuel = 200
 	    let fuelCharge = 100
+	    let angle
 	    
 	    //Used to determine whether the game is on the planet or title screen
 	    //Switch between 0 and 1 to go to title screen and planet
@@ -168,7 +169,7 @@ function update() {
 	 gameState.gun.y = gameState.player.y + 3
 	  
 	 //Sets the guns rotation
-	 var angle = Phaser.Math.angleBetween(
+	 angle = Phaser.Math.angleBetween(
          gameState.gun.x, gameState.gun.y,
          game.input.mousePointer.x, game.input.mousePointer.y
          );
