@@ -49,7 +49,7 @@
   );
   this.load.image(
     "logo", 
-    "images/Monster Wars Logo (1).png"
+    "images/Monster Wars Logo (2).png"
   );
 		    
 }
@@ -77,7 +77,7 @@ function create() {
   	gameState.startButton = this.add.sprite(window.innerWidth / 2, window.innerHeight / 2, "start").setScale(0.65);
 	  
 	//The logo being created
-	gameState.logo = this.add.sprite(window.innerWidth / 2, window.innerHeight / 2, "logo").setScale(0.65);
+	gameState.logo = this.add.sprite(window.innerWidth / 3, window.innerHeight / 2, "logo").setScale(0.75);
 	  
 	//The button handling being clicked
   	gameState.startButton.setInteractive()
