@@ -170,13 +170,15 @@ function update() {
   	} else{
     		gameState.player.setVelocityX(0)
   	}
-  }
+  
   
   	//Checks if you fall off the cliff
-	/*if(window.innerHeight < gameState.player.y && gameOn === 1){
+	//gameState.player.y
+	//Doesn't work because of player y not defined?
+	if(window.innerHeight < gameState.player.y && gameOn === 1){
   		console.log('Death')
-  	}*/
-	
+  	}
+  }	
   //Not currently in use
   //gameState.score = gameOn
   //gameState.scoreText.setText(`Fuel: ${gameState.score}`)
