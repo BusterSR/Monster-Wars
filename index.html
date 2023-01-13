@@ -127,10 +127,7 @@ function create() {
 function update() {
 	
   //Code to make the background move with the mouse
-  console.log(game.input.mousePointer.x)
-  //console.log(pointer.x)
-  //console.log(game.input.x);
-  //gameState.bg.x = 
+  gameState.bg.x = game.input.mousePointer.x / 70
 	
   //Only updates planet stuff if game is on the planet
   if(gameOn === 1){
