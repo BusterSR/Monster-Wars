@@ -175,7 +175,7 @@ function update() {
   	//Checks if you fall off the cliff
 	if(window.innerHeight - window.innerHeight / 15 < gameState.player.y && gameOn === 1){
 		gameOn = 0
-		this.cameras.main.shake(500, .01, false, function(camera, progress) {this.scene.restart(this, {}, 'previous')})
+		this.cameras.main.shake(800, .01, false, function(camera, progress) {this.scene.restart(this, {}, 'previous')})
   	}
   }	
   //Not currently in use
