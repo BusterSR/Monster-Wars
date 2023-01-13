@@ -76,6 +76,10 @@ function create() {
   //Stuff that loads if the game is on the title screen
   if(gameOn === 0){
 	  
+	//Resets the players stats
+	fuel = 200
+	fuelCharge = 100
+	  
 	//Start button code
   	gameState.startButton = this.add.sprite(window.innerWidth / 2, window.innerHeight / 2, "start").setScale(0.65);
 	  
