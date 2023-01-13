@@ -173,10 +173,11 @@ function update() {
   
   
   	//Checks if you fall off the cliff
-	//gameState.player.y
-	//Doesn't work because of player y not defined?
 	if(window.innerHeight < gameState.player.y && gameOn === 1){
   		console.log('Death')
+		gameOn = 0
+		console.log(gameOn)
+    		this.scene.restart(this, {}, 'previous')
   	}
   }	
   //Not currently in use
