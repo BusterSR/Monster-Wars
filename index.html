@@ -169,10 +169,7 @@ function update() {
 	 gameState.gun.y = gameState.player.y + 3
 	  
 	 //Sets the guns rotation
-	 angle = Phaser.Math.angleBetween(
-         gameState.gun.x, gameState.gun.y,
-         game.input.mousePointer.x, game.input.mousePointer.y
-         );
+	 angle = Math.atan2(game.input.mousePointer.y - gameState.gun.y, game.input.mousePointer.x - gameState.gun.x);
 	 gameState.gun.rotation = angle;
   }
   
