@@ -171,8 +171,7 @@ function update() {
 	 //Sets the guns rotation
 	 angle = Math.atan2(game.input.mousePointer.y - gameState.gun.y, game.input.mousePointer.x - gameState.gun.x);
 	 gameState.gun.rotation = angle;
-	 gameState.gun.anchor.x = 0;
-	 gameState.gun.anchor.y = 1;
+	 gameState.gun.anchor.set(0.5);
   }
   
   //Makes sure the fuel runs smoothly
