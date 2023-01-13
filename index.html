@@ -162,6 +162,10 @@ function update() {
          //Draw the full part of the fuel bar
   	 gameState.graphics.fillStyle(5656E1, 1);
  	 gameState.graphics.fillRect(10, 10, healthBarWidth, 20);
+	  
+	 //Set the guns position
+	 gameState.gun.x = gameState.player.x
+	 gameState.gun.y = gameState.player.y
   }
   
   //Makes sure the fuel runs smoothly
