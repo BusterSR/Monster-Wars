@@ -64,17 +64,17 @@ const gameState = {
 //The create function
 function create() {
    
-  //The background being created
+  //Not in use
   //var bg = this.add.image(window.innerWidth / 2, window.innerHeight / 2, 'bg');
+	
+  //Background code
+  gameState.bg = this.add.sprite(window.innerWidth / 2, window.innerHeight / 2, 'bg').setScale(1);
 	
   //Stuff for the health bar
   gameState.graphics = this.add.graphics();
 	
   //Stuff that loads if the game is on the title screen
   if(gameOn === 0){
-	
-	//Background code
-	gameState.bg = this.add.sprite(window.innerWidth / 2, window.innerHeight / 2, 'bg').setScale(1);
 	  
 	//Start button code
   	gameState.startButton = this.add.sprite(window.innerWidth / 2, window.innerHeight / 2, "start").setScale(0.65);
