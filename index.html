@@ -131,8 +131,9 @@ function update() {
 	
   //Only updates if the game is on the title screen
   if(gameOn === 0){
+	
 	//Code to make the background move with the mouse
-  	//gameState.bg.y = 30 //game.input.mousePointer.x / 70
+  	gameState.bg.y = game.input.mousePointer.x / 70
   }
 	
   //Only updates planet stuff if game is on the planet
