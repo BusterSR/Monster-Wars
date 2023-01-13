@@ -186,7 +186,7 @@ function update() {
   if (gameState.cursors.up.isDown || gameState.wasd.up.isDown) {
 	  if(fuel > 0 && fuelCharge === 100){
 		   gameState.player.setVelocityY(-550);
-		   this.cameras.main.shake(500, .01, false, function(camera, progress) {})
+		   this.cameras.main.shake(100, .005, false, function(camera, progress) {})
 		   fuel -= 2
 	  }
   }
