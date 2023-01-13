@@ -173,7 +173,7 @@ function update() {
   
   
   	//Checks if you fall off the cliff
-	if(window.innerHeight < gameState.player.y && gameOn === 1){
+	if(window.innerHeight - window.innerHeight / 7 < gameState.player.y && gameOn === 1){
   		console.log('Death')
 		gameOn = 0
 		console.log(gameOn)
