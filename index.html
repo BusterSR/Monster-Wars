@@ -65,7 +65,7 @@ const gameState = {
 function create() {
    
   //The background being created
-  var bg = this.add.image(window.innerWidth / 2, window.innerHeight / 2, 'bg');
+  //var bg = this.add.image(window.innerWidth / 2, window.innerHeight / 2, 'bg');
 	
   //Stuff for the health bar
   gameState.graphics = this.add.graphics();
@@ -73,6 +73,9 @@ function create() {
   //Stuff that loads if the game is on the title screen
   if(gameOn === 0){
 	
+	//Background code
+	gameState.bg = this.add.sprite(window.innerWidth / 2, window.innerHeight / 2, 'bg');
+	  
 	//Start button code
   	gameState.startButton = this.add.sprite(window.innerWidth / 2, window.innerHeight / 2, "start").setScale(0.65);
 	  
@@ -129,12 +132,12 @@ function update() {
   //Only updates if the game is on the title screen
   if(gameOn === 0){
 	//Code to make the background move with the mouse
-  	bg.y = 30 //game.input.mousePointer.x / 70
+  	gameState.bg.y = 30 //game.input.mousePointer.x / 70
   }
 	
   //Only updates planet stuff if game is on the planet
   if(gameOn === 1){
-  	gameState.graphics.clear();
+  	 gameState.graphics.clear();
 	
          //Draw the background for the fuel bar
  	 gameState.graphics.fillStyle(666666, 1);
