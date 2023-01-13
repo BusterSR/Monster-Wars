@@ -133,7 +133,8 @@ function update() {
   if(gameOn === 0){
 	
 	//Code to make the background move with the mouse
-  	gameState.bg.y = game.input.mousePointer.x / 70
+  	gameState.bg.x = game.input.mousePointer.x / 70
+	gameState.bg.y = game.input.mousePointer.y / 70
   }
 	
   //Only updates planet stuff if game is on the planet
