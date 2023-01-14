@@ -210,8 +210,8 @@ function update() {
 			 console.log('BANG!')
 			 bX = gameState.bullet.x + (Math.cos(radians) * 2);
 			 bY = gameState.bullet.y + (Math.sin(radians) * 2);
-			 gameState.bullet.x = bX;
-			 gameState.bullet.y = bY;
+			 gameState.bullet.x += bX;
+			 gameState.bullet.y += bY;
 
 		 }
 	 } else{
