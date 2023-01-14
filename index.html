@@ -173,11 +173,11 @@ function update() {
 	 console.log(angle)
 	 gameState.gun.rotation = angle;
 	 if(-1.6 > angle && angle > -3.15){
-		 gameState.gun.x = gameState.player.x + 55
+		 gameState.gun.x = gameState.player.x + 60
 		 gameState.gun.flipY=true
 		 gameState.gun.setOrigin(0,0)
 	 } else if(1.6 < angle && angle < 3.15){
-		 gameState.gun.x = gameState.player.x + 55
+		 gameState.gun.x = gameState.player.x + 60
 		 gameState.gun.flipY=true
 		 gameState.gun.setOrigin(0,0)
 	 } else{
