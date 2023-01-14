@@ -196,8 +196,10 @@ function update() {
 	 if (bulletOnGun === 1){
 		 bulletAngle = angle
 	 	 gameState.bullet.rotation = bulletAngle
-		 gameState.bullet.x = gameState.gun.x + bulletAngle * 20
-		 gameState.bullet.y = gameState.gun.y + bulletAngle * 20
+		 //gameState.bullet.x = gameState.gun.x + bulletAngle
+		 gameState.bullet.x = gameState.gun.origin(0,0)
+		 //gameState.bullet.y = gameState.gun.y + bulletAngle
+		 gameState.bullet.y = gameState.gun.origin(0,0)
 	 } else{
 		 //
 	 }
