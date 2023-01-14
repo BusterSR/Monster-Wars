@@ -205,10 +205,10 @@ function update() {
 	 	 gameState.bullet.rotation = bulletAngle;
 		 gameState.bullet.x = gameState.gun.originX + gameState.gun.x
 		 gameState.bullet.y = gameState.gun.originY + gameState.gun.y
-		 radians = Phaser.Math.degToRad(angle)
+		 radians = angle * (Math.PI / 180);
 		 if(game.input.activePointer.isDown){
 			 console.log('BANG!')
-			 bX = gameState.bullet.x + (Math.cos(radians) * 2);
+			 bX = gameState.bullet.x + (Math.cos(radians) * 2;
 			 bY = gameState.bullet.y + (Math.sin(radians) * 2);
 			 gameState.bullet.x = bX;
 			 gameState.bullet.y = bY;
