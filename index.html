@@ -208,8 +208,8 @@ function update() {
 		 radians = angle * (Math.PI / 180);
 		 if(game.input.activePointer.isDown){
 			 console.log('BANG!')
-			 bX = gameState.bullet.x + (Math.cos(radians) * 1);
-			 bY = gameState.bullet.y + (Math.sin(radians) * 1);
+			 bX = gameState.bullet.x + (Math.cos(angle) * 1);
+			 bY = gameState.bullet.y + (Math.sin(angle) * 1);
 			 gameState.bullet.x += bX;
 			 gameState.bullet.y += bY;
 
