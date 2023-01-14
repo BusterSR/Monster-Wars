@@ -173,6 +173,13 @@ function update() {
 	 console.log(angle)
 	 gameState.gun.rotation = angle;
 	 gameState.gun.setOrigin(0,1);
+	 if(-1.6 > angle && angle > -3.1){
+		 gameState.gun.flipX=true
+	 } else if(1.6 < angle && angle < 3.1){
+		 gameState.gun.flipX=true
+	 } else{
+		 gameState.gun.flipX=false
+	 }
   }
   
   //Makes sure the fuel runs smoothly
