@@ -25,6 +25,8 @@
 	    let bY
 	    let radians
 	    let cursor
+	    let buX
+	    let buY
 	    
 	    //Used to determine whether the game is on the planet or title screen
 	    //Switch between 0 and 1 to go to title screen and planet
@@ -214,8 +216,10 @@ function update() {
 			 console.log('BANG!')
 			 bX = Math.cos(angle) * 2
 			 bY = Math.sin(angle) * 2
-			 gameState.bullet.x += bX
-			 gameState.bullet.y += bY
+			 buX = bX + gameState.bullet.x
+			 buY = bY + gameState.bullet.x
+			 gameState.bullet.x += buX
+			 gameState.bullet.y += buY
 
 		 }
 	 } else{
