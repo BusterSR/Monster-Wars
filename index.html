@@ -94,10 +94,12 @@ function create() {
 	//The button handling being clicked
   	gameState.startButton.setInteractive()
 	gameState.startButton.on('pointerdown', function() {
-    		gameOn = 1
-		console.log(gameOn)
-    		this.scene.restart(this, {}, 'previous')
-		console.log('reset')
+		this.cameras.main.fade(200, 0, 0, 0, false, function(camera, progress) {if(progress > .9){
+			gameOn = 1
+			this.scene.restart(this, {}, 'previous')
+		}})
+    		//gameOn = 1
+    		//this.scene.restart(this, {}, 'previous')
 	}, this);
   }
   
