@@ -198,6 +198,11 @@ function update() {
 	 	 gameState.bullet.rotation = bulletAngle
 	 }
 	 
+	 gameState.bullet.setVelocity(
+  		 1 * Math.cos(bulletAngle),
+  	 	 1 * Math.sin(bulletAngle)
+	 );
+	 
   }
   
   //Makes sure the fuel runs smoothly
