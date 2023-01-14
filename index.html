@@ -21,6 +21,7 @@
 	    let angle
 	    let bulletAngle
 	    let bulletOnGun
+	    let newPosition
 	    
 	    //Used to determine whether the game is on the planet or title screen
 	    //Switch between 0 and 1 to go to title screen and planet
@@ -199,9 +200,9 @@ function update() {
 	 }
 	 
 	 //Makes the bullet move
-	 gameState.bullet.setAngle(bulletAngle)
-	 gameState.bullet.setVelocity(1)
-	 
+	 newPosition = Phaser.Math.RotateAroundDistance(gameState.bullet.x, gameState.bullet.y, gameState.bullet.x, gameState.bullet.y, Phaser.Math.DegToRad(bulletAngle), 5);
+	 gameState.bullet.x = newPosition.x;
+	 gameState.bullet.y = newPosition.y;
   }
   
   //Makes sure the fuel runs smoothly
