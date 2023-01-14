@@ -202,7 +202,7 @@ function update() {
 	 	 gameState.bullet.rotation = bulletAngle;
 		 gameState.bullet.x = gameState.gun.originX + gameState.gun.x
 		 gameState.bullet.y = gameState.gun.originY + gameState.gun.y
-		 if('pointerdown'){
+		 if(game.input.activePointer.isDown){
 			 console.log('BANG!')
 		 }
 	 } else{
