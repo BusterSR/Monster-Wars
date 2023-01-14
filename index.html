@@ -165,7 +165,7 @@ function update() {
  	 gameState.graphics.fillRect(10, 10, healthBarWidth, 20);
 	  
 	 //Sets the guns position
-	 gameState.gun.x = gameState.player.x + 43
+	 //gameState.gun.x = gameState.player.x + 43
 	 gameState.gun.y = gameState.player.y + 13
 	  
 	 //Sets the guns rotation
@@ -173,15 +173,15 @@ function update() {
 	 console.log(angle)
 	 gameState.gun.rotation = angle;
 	 if(-1.6 > angle && angle > -3.15){
-		 //gameState.gun.y = gameState.player.y + -13
+		 gameState.gun.x = gameState.player.x + 50
 		 gameState.gun.flipY=true
 		 gameState.gun.setOrigin(0,0)
 	 } else if(1.6 < angle && angle < 3.15){
-		 //gameState.gun.y = gameState.player.y + -13
+		 gameState.gun.x = gameState.player.x + 50
 		 gameState.gun.flipY=true
 		 gameState.gun.setOrigin(0,0)
 	 } else{
-		 //gameState.gun.y = gameState.player.y + 13
+		 gameState.gun.x = gameState.player.x + 43
 		 gameState.gun.flipY=false
 		 gameState.gun.setOrigin(0,1);
 	 }
