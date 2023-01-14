@@ -19,6 +19,8 @@
 	    let fuel = 200
 	    let fuelCharge = 100
 	    let angle
+	    let bulletAngle
+	    let bulletOnGun
 	    
 	    //Used to determine whether the game is on the planet or title screen
 	    //Switch between 0 and 1 to go to title screen and planet
@@ -189,6 +191,13 @@ function update() {
 		 gameState.gun.flipY=false
 		 gameState.gun.setOrigin(0,1);
 	 }
+	 
+	 //Sets the bullets position
+	 bulletAngle = angle
+	 if (bulletOnGun === 1){
+	 	 bulletAngle = angle
+	 }
+	 
   }
   
   //Makes sure the fuel runs smoothly
