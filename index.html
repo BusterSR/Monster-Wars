@@ -170,6 +170,7 @@ function update() {
 	  
 	 //Sets the guns rotation
 	 angle = Math.atan2(game.input.mousePointer.y - gameState.gun.y, game.input.mousePointer.x - gameState.gun.x);
+	 console.log(angle)
 	 gameState.gun.rotation = angle;
 	 gameState.gun.setOrigin(0,1);
   }
