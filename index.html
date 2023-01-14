@@ -197,9 +197,9 @@ function update() {
 		 bulletAngle = angle
 	 	 gameState.bullet.rotation = bulletAngle
 		 //gameState.bullet.x = gameState.gun.x + bulletAngle
-		 gameState.bullet.x = gameState.gun.originX
+		 gameState.bullet.x = gameState.gun.originX + gameState.gun.x
 		 //gameState.bullet.y = gameState.gun.y + bulletAngle
-		 gameState.bullet.y = gameState.gun.originY
+		 gameState.bullet.y = gameState.gun.originY + gameState.gun.y
 	 } else{
 		 //
 	 }
