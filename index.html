@@ -214,8 +214,8 @@ function update() {
 			 console.log('BANG!')
 			 bX = Math.cos(angle) * 2
 			 bY = Math.sin(angle) * 2
-			 gameState.bullet.x += bX
-			 gameState.bullet.y += bY
+			 gameState.bullet.x += bX + gameState.bullet.x
+			 gameState.bullet.y += bY + gameState.bullet.x
 
 		 }
 	 } else{
