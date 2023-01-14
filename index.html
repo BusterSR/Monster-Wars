@@ -24,6 +24,7 @@
 	    let bX
 	    let bY
 	    let radians
+	    let cursor
 	    
 	    //Used to determine whether the game is on the planet or title screen
 	    //Switch between 0 and 1 to go to title screen and planet
@@ -205,13 +206,13 @@ function update() {
 	 	 gameState.bullet.rotation = bulletAngle;
 		 gameState.bullet.x = gameState.gun.originX + gameState.gun.x
 		 gameState.bullet.y = gameState.gun.originY + gameState.gun.y
-		 radians = angle * (Math.PI / 180);
+		 //radians = angle * (Math.PI / 180);
 		 if(game.input.activePointer.isDown){
 			 console.log('BANG!')
-			 //bX = gameState.bullet.x + (Math.cos(angle) * 1);
-			 //bY = gameState.bullet.y + (Math.sin(angle) * 1);
-			 gameState.bullet.x = gameState.bullet.x + Math.cos(radians) * 2;
-			 gameState.bullet.y = gameState.bullet.x + Math.sin(radians) * 2;
+			 ///bX = gameState.bullet.x + (Math.cos(angle) * 1);
+			 ///bY = gameState.bullet.y + (Math.sin(angle) * 1);
+			 //gameState.bullet.x = gameState.bullet.x + Math.cos(radians) * 2;
+			 //gameState.bullet.y = gameState.bullet.x + Math.sin(radians) * 2;
 
 		 }
 	 } else{
