@@ -175,8 +175,8 @@ function update() {
 	 if (bulletOnGun === 1){
 		 bulletAngle = angle
 	 	 gameState.bullet.rotation = bulletAngle;
-		 //gameState.bullet.x = gameState.gun.originX * 40 + gameState.gun.x
-		 //gameState.bullet.y = gameState.gun.originY * -40 + gameState.gun.y
+		 gameState.bullet.x = gameState.gun.originX + gameState.gun.x
+		 gameState.bullet.y = gameState.gun.originY + gameState.gun.y
 	 } else{
 		 //
 	 }
@@ -193,27 +193,17 @@ function update() {
 		 gameState.gun.flipY=true
 		 gameState.gun.setOrigin(0,0)
 		 
-		 //Sets the bullets position
-		 gameState.bullet.x = gameState.gun.originX/* * 40*/ + gameState.gun.x
-		 gameState.bullet.y = gameState.gun.originY/* * -80*/ + gameState.gun.y
-		 
 	 } else if(1.6 < angle && angle < 3.15){
 		 gameState.gun.x = gameState.player.x + 65
 		 gameState.gun.flipY=true
 		 gameState.gun.setOrigin(0,0)
-		 
-		 //Sets the bullets position
-		 gameState.bullet.x = gameState.gun.originX/* * 40*/ + gameState.gun.x
-		 gameState.bullet.y = gameState.gun.originY/* * -80*/ + gameState.gun.y
+
 	 } else{
 		 //Gun to the right
 		 gameState.gun.x = gameState.player.x + 43
 		 gameState.gun.flipY=false
 		 gameState.gun.setOrigin(0,1);
 		 
-		 //Sets the bullets position
-		 gameState.bullet.x = gameState.gun.originX/* * 80*/ + gameState.gun.x
-		 gameState.bullet.y = gameState.gun.originY/* * -40*/ + gameState.gun.y
 	 }
 	 
 	 //Makes the bullet move
