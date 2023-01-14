@@ -81,6 +81,9 @@ function create() {
   //Not in use
   //var bg = this.add.image(window.innerWidth / 2, window.innerHeight / 2, 'bg');
 	
+  //Sets mouse position
+  cursor = this.input.activePointer
+	
   //Background code
   gameState.bg = this.add.sprite(window.innerWidth / 2, window.innerHeight / 2, 'bg').setScale(1.3);
 	
@@ -202,17 +205,17 @@ function update() {
 	 
 	 //Stuff for the bullets
 	 if (bulletOnGun === 1){
-		 bulletAngle = angle
+		 bulletAngle = Math.atan2(cursor.y - gameState.bullet.y, cursor.x - gameState.bullet.x);
 	 	 gameState.bullet.rotation = bulletAngle;
 		 gameState.bullet.x = gameState.gun.originX + gameState.gun.x
 		 gameState.bullet.y = gameState.gun.originY + gameState.gun.y
 		 //radians = angle * (Math.PI / 180);
 		 if(game.input.activePointer.isDown){
 			 console.log('BANG!')
-			 ///bX = gameState.bullet.x + (Math.cos(angle) * 1);
-			 ///bY = gameState.bullet.y + (Math.sin(angle) * 1);
-			 //gameState.bullet.x = gameState.bullet.x + Math.cos(radians) * 2;
-			 //gameState.bullet.y = gameState.bullet.x + Math.sin(radians) * 2;
+			 bX = Math.cos(angle) * 2
+			 bY = Math.sin(angle) * 2
+			 gameState.bullet.x += bX
+			 gameState.bullet.y += bY
 
 		 }
 	 } else{
