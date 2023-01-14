@@ -204,6 +204,7 @@ function update() {
 		 gameState.bullet.y = gameState.gun.originY + gameState.gun.y
 		 if(game.input.activePointer.isDown){
 			 console.log('BANG!')
+			 gameState.bullet.move(10)
 		 }
 	 } else{
 		 //
