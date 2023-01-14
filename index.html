@@ -175,9 +175,11 @@ function update() {
 	 if(-1.6 > angle && angle > -3.15){
 		 //gameState.gun.y = gameState.player.y + -13
 		 gameState.gun.flipY=true
+		 gameState.gun.setOrigin(0,0)
 	 } else if(1.6 < angle && angle < 3.15){
 		 //gameState.gun.y = gameState.player.y + -13
 		 gameState.gun.flipY=true
+		 gameState.gun.setOrigin(0,0)
 	 } else{
 		 //gameState.gun.y = gameState.player.y + 13
 		 gameState.gun.flipY=false
