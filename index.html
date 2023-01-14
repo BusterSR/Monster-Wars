@@ -174,10 +174,10 @@ function update() {
 	 gameState.gun.rotation = angle;
 	 if(-1.6 > angle && angle > -3.1){
 		 gameState.gun.flipX=true
-		 gameState.gun.setOrigin(0,0);
+		 gameState.gun.setOrigin(1,1);
 	 } else if(1.6 < angle && angle < 3.1){
 		 gameState.gun.flipX=true
-		 gameState.gun.setOrigin(0,0);
+		 gameState.gun.setOrigin(1,1);
 	 } else{
 		 gameState.gun.flipX=false
 		 gameState.gun.setOrigin(0,1);
