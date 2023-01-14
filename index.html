@@ -209,7 +209,14 @@ function update() {
   	} else{
     		gameState.player.setVelocityX(0)
   	}
-  
+	
+        //Teleports the player if they go to far to the side
+	if(gameState.player.x < 0){
+    		gameState.player.x = window.innerWidth
+  	}
+  	if(gameState.player.x > window.innerWidth){
+    		gameState.player.x = 0
+	}
   
   	//Checks if you fall off the cliff
 	if(window.innerHeight - window.innerHeight / 15 < gameState.player.y && gameOn === 1){
