@@ -172,10 +172,10 @@ function update() {
 	 angle = Math.atan2(game.input.mousePointer.y - gameState.gun.y, game.input.mousePointer.x - gameState.gun.x);
 	 console.log(angle)
 	 gameState.gun.rotation = angle;
-	 if(-1.6 > angle && angle > -3.1){
+	 if(-1.6 > angle && angle > -3.15){
 		 gameState.gun.flipY=true
 		 //gameState.gun.setOrigin(1,1);
-	 } else if(1.6 < angle && angle < 3.1){
+	 } else if(1.6 < angle && angle < 3.15){
 		 gameState.gun.flipY=true
 		 //gameState.gun.setOrigin(1,1);
 	 } else{
