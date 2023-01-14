@@ -89,6 +89,7 @@ function create() {
 	//Resets the players stats
 	fuel = 200
 	fuelCharge = 100
+	bulletOnGun = 1
 	  
 	//Start button code
   	gameState.startButton = this.add.sprite(window.innerWidth / 2, window.innerHeight / 2, "start").setScale(0.65);
@@ -192,10 +193,12 @@ function update() {
 	 }
 	 
 	 //Sets the bullets position
-	 bulletAngle = angle
-	 gameState.bullet.rotation = bulletAngle
 	 if (bulletOnGun === 1){
+		 bulletAngle = angle
 	 	 gameState.bullet.rotation = bulletAngle
+		 
+	 } else{
+		 //
 	 }
 	 
 	 //Makes the bullet move
