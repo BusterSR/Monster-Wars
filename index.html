@@ -166,20 +166,20 @@ function update() {
 	  
 	 //Sets the guns position
 	 gameState.gun.x = gameState.player.x + 43
-	 //gameState.gun.y = gameState.player.y + 13
+	 gameState.gun.y = gameState.player.y + 13
 	  
 	 //Sets the guns rotation
 	 angle = Math.atan2(game.input.mousePointer.y - gameState.gun.y, game.input.mousePointer.x - gameState.gun.x);
 	 console.log(angle)
 	 gameState.gun.rotation = angle;
 	 if(-1.6 > angle && angle > -3.15){
-		 gameState.gun.y = gameState.player.y + -13
+		 //gameState.gun.y = gameState.player.y + -13
 		 gameState.gun.flipY=true
 	 } else if(1.6 < angle && angle < 3.15){
-		 gameState.gun.y = gameState.player.y + -13
+		 //gameState.gun.y = gameState.player.y + -13
 		 gameState.gun.flipY=true
 	 } else{
-		 gameState.gun.y = gameState.player.y + 13
+		 //gameState.gun.y = gameState.player.y + 13
 		 gameState.gun.flipY=false
 		 gameState.gun.setOrigin(0,1);
 	 }
