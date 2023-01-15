@@ -227,6 +227,18 @@ function update() {
 		 if (bounds1.contains(bounds2.x, bounds2.y) || bounds2.contains(bounds1.x, bounds1.y)){
 			 bulletOnGun = 1
 		 }
+		 if(gameState.bullet.x < 0){
+    		 	 bulletOnGun = 1
+  		 }
+  		 if(gameState.bullet.x > window.innerWidth){
+    		 	 bulletOnGun = 1
+		 }
+		 if(gameState.bullet.y < 0){
+    		 	 bulletOnGun = 1
+  		 }
+  		 if(gameState.bullet.y > window.innerHeight){
+    		 	 bulletOnGun = 1
+		 }
 	 }
 	 
   }
