@@ -211,7 +211,7 @@ function update() {
 		 gameState.bullet.x = gameState.gun.originX + gameState.gun.x
 		 gameState.bullet.y = gameState.gun.originY + gameState.gun.y
 		 gameState.bullet.visible = false
-		 //radians = angle * (Math.PI / 180);
+		 this.cameras.main.shake(100, .005, false, function(camera, progress) {})
 		 if(game.input.activePointer.isDown){
 			 bX = Math.cos(angle) * 30
 			 bY = Math.sin(angle) * 30
