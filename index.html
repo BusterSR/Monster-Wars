@@ -142,6 +142,7 @@ function create() {
   if(gameOn === 1) {
 	 //Loading the enemies
 	 gameState.muncher1 = this.physics.add.sprite(window.innerWidth / 2, window.innerHeight / 3, 'muncher1').setScale(0.25);
+	 gameState.muncher1.body.disable();
 	
 	 //Making the enemies animations
 	 this.anims.create({
