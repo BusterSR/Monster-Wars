@@ -121,6 +121,7 @@ function create() {
   	gameState.player = this.physics.add.sprite(window.innerWidth / 2, window.innerHeight / 2, "codey").setScale(0.5);
 	gameState.gun = this.add.sprite(window.innerWidth / 2, window.innerHeight / 2, "theGun").setScale(0.3);
 	gameState.bullet = this.add.sprite(window.innerWidth / 2, window.innerHeight / 2, "theBullet").setScale(0.25);
+	gameState.platformy = this.add.sprite(window.innerWidth / 2, window.innerHeight - window.innerHeight / 5, "platform");
   }
   
   //Not in use right now
@@ -130,8 +131,6 @@ function create() {
   const platforms = this.physics.add.staticGroup();
   if(gameOn === 1){
  	 platforms.create(window.innerWidth / 2, window.innerHeight - window.innerHeight / 5, "platform");
-	 //this.game.world.setBounds(0, 0, window.innerWidth, 900000);
-  	 //gameState.player.setCollideWorldBounds(true);
   }
 	
   //Makes sure the player and planet colide
@@ -224,7 +223,7 @@ function update() {
 		 gameState.bullet.x += bX
 		 gameState.bullet.y += bY
 		 bounds1 = gameState.bullet.getBounds();
-		 bounds2 = platforms.getBounds();
+		 bounds2 = gameState.platformy.getBounds();
 		 if (bounds1.contains(bounds2.x, bounds2.y) || bounds2.contains(bounds1.x, bounds1.y)){
 			 //bulletOnGun = 1
 			 console.log('TOUCHING')
