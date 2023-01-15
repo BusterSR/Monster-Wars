@@ -210,6 +210,7 @@ function update() {
 	 	 gameState.bullet.rotation = bulletAngle;
 		 gameState.bullet.x = gameState.gun.originX + gameState.gun.x
 		 gameState.bullet.y = gameState.gun.originY + gameState.gun.y
+		 gameState.bullet.visible = false
 		 //radians = angle * (Math.PI / 180);
 		 if(game.input.activePointer.isDown){
 			 bX = Math.cos(angle) * 30
@@ -220,6 +221,7 @@ function update() {
 
 		 }
 	 } else{
+		 gameState.bullet.visible = true
 		 gameState.bullet.x += bX
 		 gameState.bullet.y += bY
 		 bounds1 = gameState.bullet.getBounds();
