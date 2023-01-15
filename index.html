@@ -68,6 +68,11 @@
     "theBullet",
     "images/Orange Bullet.png"
   )	    
+  this.load.spritesheet(
+    'muncher1', 
+    'spriteSheet.png',
+    { frameWidth: 100, frameHeight: 100 }
+  );
 }
 
 //The game state being created
@@ -122,6 +127,17 @@ function create() {
 	gameState.gun = this.add.sprite(window.innerWidth / 2, window.innerHeight / 2, "theGun").setScale(0.3);
 	gameState.bullet = this.add.sprite(window.innerWidth / 2, window.innerHeight / 2, "theBullet").setScale(0.25);
 	gameState.platformy = this.add.sprite(window.innerWidth / 2, window.innerHeight - window.innerHeight / 5, "platform");
+	  
+	//Loading the enemies
+	gameState.muncher1 = this.physics.add.sprite(100, 600, 'muncher1')
+	
+	//Making the enemies animations
+	this.anims.create({
+      		key: 'muncher1anim',
+      		frames: this.anims.generateFrameNumbers('muncher1', { start: 0, end: 3 }),
+      		frameRate: 10,
+      		repeat: -1
+    	});
   }
   
   //Not in use right now
@@ -166,6 +182,9 @@ function update() {
   //Only updates planet stuff if game is on the planet
   if(gameOn === 1){
   	 gameState.graphics.clear();
+	  
+	 //Run the enemies animation
+	 gameState.muncher1.anims.play('muncher1anim', true);
 	
          //Draw the background for the fuel bar
  	 gameState.graphics.fillStyle(666666, 1);
