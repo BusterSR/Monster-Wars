@@ -127,17 +127,6 @@ function create() {
 	gameState.gun = this.add.sprite(window.innerWidth / 2, window.innerHeight / 2, "theGun").setScale(0.3);
 	gameState.bullet = this.add.sprite(window.innerWidth / 2, window.innerHeight / 2, "theBullet").setScale(0.25);
 	gameState.platformy = this.add.sprite(window.innerWidth / 2, window.innerHeight - window.innerHeight / 5, "platform");
-	  
-	//Loading the enemies
-	gameState.muncher1 = this.physics.add.sprite(window.innerWidth / 2, window.innerHeight / 3, 'muncher1').setScale(0.25);
-	
-	//Making the enemies animations
-	this.anims.create({
-      		key: 'muncher1anim',
-      		frames: this.anims.generateFrameNumbers('muncher1', { start: 0, end: 3 }),
-      		frameRate: 10,
-      		repeat: -1
-    	});
   }
   
   //Not in use right now
@@ -147,6 +136,20 @@ function create() {
   const platforms = this.physics.add.staticGroup();
   if(gameOn === 1){
  	 platforms.create(window.innerWidth / 2, window.innerHeight - window.innerHeight / 5, "platform");
+  }
+
+  //Loads enemy stuff
+  if(gameOn === 1) {
+	 //Loading the enemies
+	 gameState.muncher1 = this.physics.add.sprite(window.innerWidth / 2, window.innerHeight / 3, 'muncher1').setScale(0.25);
+	
+	 //Making the enemies animations
+	 this.anims.create({
+      		key: 'muncher1anim',
+      		frames: this.anims.generateFrameNumbers('muncher1', { start: 0, end: 3 }),
+      		frameRate: 10,
+      		repeat: -1
+    	 });
   }
 	
   //Makes sure the player and planet colide
