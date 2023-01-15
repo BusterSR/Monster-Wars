@@ -144,7 +144,7 @@ function create() {
 	 gameState.muncher1 = this.physics.add.sprite(window.innerWidth / 2, window.innerHeight / 3, 'muncher1').setScale(0.25);
 	 gameState.muncher1.body.gravity.y = 0
 	 gameState.muncher1.body.velocity.y = 0;
-	 gameState.muncher1.body.setCollideWorldBounds(false);
+	 gameState.muncher1.body.setCollideWorldBounds(true);
 	
 	 //Making the enemies animations
 	 this.anims.create({
