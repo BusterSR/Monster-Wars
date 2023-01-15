@@ -222,6 +222,9 @@ function update() {
 	 } else{
 		 gameState.bullet.x += bX
 		 gameState.bullet.y += bY
+		 if (this.physics.arcade.overlap(gameState.bullet, gameState.bg)){
+			 bulletOnGun = 1
+		 }
 	 }
 	 
   }
