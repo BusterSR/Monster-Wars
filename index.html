@@ -129,7 +129,7 @@ function create() {
 	gameState.platformy = this.add.sprite(window.innerWidth / 2, window.innerHeight - window.innerHeight / 5, "platform");
 	  
 	//Loading the enemies
-	gameState.muncher1 = this.physics.add.sprite(100, 600, 'muncher1')
+	gameState.muncher1 = this.physics.add.sprite(window.innerWidth, window.innerHeight, 'muncher1').setScale(0.25);
 	
 	//Making the enemies animations
 	this.anims.create({
