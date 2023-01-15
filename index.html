@@ -226,7 +226,8 @@ function update() {
 		 bounds1 = gameState.bullet.getBounds();
 		 bounds2 = gameState.bg.getBounds();
 		 if (bounds1.contains(bounds2.x, bounds2.y) || bounds2.contains(bounds1.x, bounds1.y)){
-			 bulletOnGun = 1
+			 //bulletOnGun = 1
+			 console.log('TOUCHING')
 		 }
 	 }
 	 
