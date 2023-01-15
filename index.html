@@ -25,6 +25,8 @@
 	    let bY
 	    let radians
 	    let cursor
+	    let bounds1
+	    let bounds2
 	    
 	    //Used to determine whether the game is on the planet or title screen
 	    //Switch between 0 and 1 to go to title screen and planet
@@ -211,7 +213,6 @@ function update() {
 		 gameState.bullet.y = gameState.gun.originY + gameState.gun.y
 		 //radians = angle * (Math.PI / 180);
 		 if(game.input.activePointer.isDown){
-			 console.log('BANG!')
 			 bX = Math.cos(angle) * 30
 			 bY = Math.sin(angle) * 30
 			 bulletOnGun = 0
@@ -222,7 +223,9 @@ function update() {
 	 } else{
 		 gameState.bullet.x += bX
 		 gameState.bullet.y += bY
-		 if (this.physics.arcade.overlap(gameState.bullet, gameState.bg)){
+		 bounds1 = gameState.bullet.getBounds();
+		 bounds2 = gameState.bg.getBounds();
+		 if (bounds1.contains(bounds2.x, bounds2.y) || bounds2.contains(bounds1.x, bounds1.y)){
 			 bulletOnGun = 1
 		 }
 	 }
