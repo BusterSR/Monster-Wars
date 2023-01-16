@@ -17,6 +17,7 @@
 	    
 	    //Some variables being set
 	    let fuel = 200
+	    let health = 200
 	    let fuelCharge = 100
 	    let angle
 	    let bulletAngle
@@ -82,6 +83,8 @@
 const gameState = {
 	health: 100,
  	maxHealth: 100,
+	REALhealth: 100,
+ 	REALmaxHealth: 100,
 	score : 0
 };
 
@@ -223,10 +226,18 @@ function update() {
          //Calculate the width of the full part of the fuel bar
  	 const healthPercentage = fuel / gameState.maxHealth;
  	 const healthBarWidth = healthPercentage * 200;
+	  
+	 //Calculate the width of the full part of the health bar
+ 	 const REALhealthPercentage = health / gameState.REALmaxHealth;
+ 	 const REALhealthBarWidth = REALhealthPercentage * 200;
 	
          //Draw the full part of the fuel bar
   	 gameState.graphics.fillStyle(5656E1, 1);
  	 gameState.graphics.fillRect(10, 10, healthBarWidth, 20);
+	  
+	 //Draw the full part of the health bar
+  	 gameState.graphicHealth.fillStyle(5656E1, 1);
+ 	 gameState.graphicHealth.fillRect(10, 10, REALhealthBarWidth, 20);
 	  
 	 //Sets the guns position
 	 //gameState.gun.x = gameState.player.x + 43
