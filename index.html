@@ -27,6 +27,7 @@
 	    let cursor
 	    let bounds1
 	    let bounds2
+	    let muncherangle1
 	    
 	    //Used to determine whether the game is on the planet or title screen
 	    //Switch between 0 and 1 to go to title screen and planet
@@ -192,6 +193,10 @@ function update() {
 	  
 	 //Run the enemies animation
 	 gameState.muncher1.anims.play('muncher1anim', true);
+	  
+	 //Sets the muncher1 angle
+	 muncherangle1 = Math.atan2(gameState.player.y - gameState.muncher1.y, gameState.player.x - gameState.muncher1.x);
+	 gameState.muncher1.rotation = muncherangle1;
 	  
 	 //Making the enemy move towards the player
 	 this.physics.accelerateToObject(gameState.muncher1, gameState.player, 60);
