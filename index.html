@@ -202,8 +202,7 @@ function update() {
 	 //this.physics.accelerateToObject(gameState.muncher1, gameState.player, 60);
 	 gameState.muncher1.setVelocityX(gameState.player.x - gameState.muncher1.x);
     	 gameState.muncher1.setVelocityY(gameState.player.y - gameState.muncher1.y);
-	 gameState.muncher1.setMaxVelocity(200);
-	 gameState.muncher1.setMinVelocity(50);
+	 this.physics.world.clampVelocity(gameState.muncher1, 50, 200);
 
 	  
          //Draw the background for the fuel bar
