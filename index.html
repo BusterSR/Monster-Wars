@@ -97,8 +97,9 @@ function create() {
   //Background code
   gameState.bg = this.add.sprite(window.innerWidth / 2, window.innerHeight / 2, 'bg').setScale(1.3);
 	
-  //Stuff for the health bar
+  //Stuff for the bars
   gameState.graphics = this.add.graphics();
+  gameState.graphicHealth = this.add.graphics();
 	
   //Stuff that loads if the game is on the title screen
   if(gameOn === 0){
