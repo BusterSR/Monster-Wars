@@ -29,6 +29,7 @@
 	    let bounds2
 	    let muncherangle1
 	    let muncherVelocity
+	    let boundM1
 	    
 	    //Used to determine whether the game is on the planet or title screen
 	    //Switch between 0 and 1 to go to title screen and planet
@@ -267,9 +268,19 @@ function update() {
 		 gameState.bullet.y += bY
 		 bounds1 = gameState.bullet.getBounds();
 		 bounds2 = gameState.platformy.getBounds();
+		 boundM1 = gameState.muncher1.getBounds();
+		 
+		 //If enemies are hit
+		 if (bounds1.contains(boundM1.x, boundM1.y) || boundM1.contains(bounds1.x, bounds1.y)){
+			 bulletOnGun = 1
+		 }
+		 
+		 //If island is hit
 		 if (bounds1.contains(bounds2.x, bounds2.y) || bounds2.contains(bounds1.x, bounds1.y)){
 			 bulletOnGun = 1
 		 }
+		 
+		 //If walls are hit
 		 if(gameState.bullet.x < 0){
     		 	 bulletOnGun = 1
   		 }
