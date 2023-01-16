@@ -154,8 +154,6 @@ function create() {
       		repeat: -1
     	 });
 	 
-	 //Making the enemy move towards the player
-	 this.physics.accelerateToObject(gameState.muncher1, gameState.player, 5);
   }
 	
   //Makes sure the player and planet colide
@@ -194,6 +192,9 @@ function update() {
 	  
 	 //Run the enemies animation
 	 gameState.muncher1.anims.play('muncher1anim', true);
+	  
+	 //Making the enemy move towards the player
+	 this.physics.accelerateToObject(gameState.muncher1, gameState.player, 5);
 	
          //Draw the background for the fuel bar
  	 gameState.graphics.fillStyle(666666, 1);
