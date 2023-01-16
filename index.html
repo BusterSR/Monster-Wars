@@ -200,8 +200,10 @@ function update() {
 	  
 	 //Making the enemy move towards the player
 	 //this.physics.accelerateToObject(gameState.muncher1, gameState.player, 60);
-	 gameState.muncher1.setVelocityX(gameState.player.x - gameState.muncher1.x);
-    	 gameState.muncher1.setVelocityY(gameState.player.y - gameState.muncher1.y);
+	 //gameState.muncher1.setVelocityX(gameState.player.x - gameState.muncher1.x);
+    	 //gameState.muncher1.setVelocityY(gameState.player.y - gameState.muncher1.y);
+	 gameState.muncher1.setVelocityX(30);
+	 gameState.muncher1.setVelocityY(30);
 	
          //Draw the background for the fuel bar
  	 gameState.graphics.fillStyle(666666, 1);
