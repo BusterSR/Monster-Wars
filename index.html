@@ -215,7 +215,11 @@ function update() {
          //Draw the background for the fuel bar
  	 gameState.graphics.fillStyle(666666, 1);
  	 gameState.graphics.fillRect(10, 10, 400, 20);
-	
+	 
+	 //Draw the background for the health bar
+ 	 gameState.graphicHealth.fillStyle(666666, 1);
+ 	 gameState.graphicHealth.fillRect(10, 10, 400, 20);
+	  
          //Calculate the width of the full part of the fuel bar
  	 const healthPercentage = fuel / gameState.maxHealth;
  	 const healthBarWidth = healthPercentage * 200;
