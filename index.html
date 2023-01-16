@@ -199,7 +199,9 @@ function update() {
 	 gameState.muncher1.rotation = muncherangle1;
 	  
 	 //Making the enemy move towards the player
-	 this.physics.accelerateToObject(gameState.muncher1, gameState.player, 60);
+	 //this.physics.accelerateToObject(gameState.muncher1, gameState.player, 60);
+	 gameState.muncher1.setVelocityX(gameState.player.x - gameState.muncher1.x);
+    	 gameState.muncher1.setVelocityY(gameState.player.y - gameState.muncher1.y);
 	
          //Draw the background for the fuel bar
  	 gameState.graphics.fillStyle(666666, 1);
