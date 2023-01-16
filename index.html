@@ -201,8 +201,8 @@ function update() {
 	  
 	 //Making the enemy move towards the player
 	 //this.physics.accelerateToObject(gameState.muncher1, gameState.player, 60);
-	 gameState.muncher1.setVelocityX(gameState.player.x - gameState.muncher1.x * 10);
-    	 gameState.muncher1.setVelocityY(gameState.player.y - gameState.muncher1.y * 10);
+	 gameState.muncher1.setVelocityX(gameState.player.x - gameState.muncher1.x * 2);
+    	 gameState.muncher1.setVelocityY(gameState.player.y - gameState.muncher1.y * 2);
 	 if (gameState.muncher1.body.velocity.x > maxVelocity) {
     	 	gameState.muncher1.body.velocity.x = maxVelocity;
 	 }
