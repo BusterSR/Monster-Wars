@@ -153,6 +153,9 @@ function create() {
       		frameRate: 10,
       		repeat: -1
     	 });
+	 
+	 //Making the enemy move towards the player
+	 this.physics.accelerateToObject(gameState.muncher1, gameState.player, 5);
   }
 	
   //Makes sure the player and planet colide
@@ -173,7 +176,7 @@ function create() {
   //anim.play();
 
 }
-	    
+
 //The update function
 function update() {
 	
