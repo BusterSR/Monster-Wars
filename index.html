@@ -28,7 +28,7 @@
 	    let bounds1
 	    let bounds2
 	    let muncherangle1
-	    let maxVelocity = 100
+	    let muncherVelocity
 	    
 	    //Used to determine whether the game is on the planet or title screen
 	    //Switch between 0 and 1 to go to title screen and planet
@@ -200,14 +200,15 @@ function update() {
 	 gameState.muncher1.rotation = muncherangle1;
 	  
 	 //Making the enemy move towards the player
-	 //this.physics.accelerateToObject(gameState.muncher1, gameState.player, 60);
-	 gameState.muncher1.setVelocityX(gameState.player.x - gameState.muncher1.x * 2);
-    	 gameState.muncher1.setVelocityY(gameState.player.y - gameState.muncher1.y * 2);
-	 if (gameState.muncher1.body.velocity.x > maxVelocity) {
-    	 	gameState.muncher1.body.velocity.x = maxVelocity;
-	 }
+	 //gameState.muncher1.setVelocityX(gameState.player.x - gameState.muncher1.x);
+    	 //gameState.muncher1.setVelocityY(gameState.player.y - gameState.muncher1.y);
+	 //if (gameState.muncher1.body.velocity.x > maxVelocity) {
+    	 	//gameState.muncher1.body.velocity.x = maxVelocity;
+	 //}
 
-
+	 muncherVelocity = this.physics.velocityFromRotation(gameState.muncher1.rotation, gameState.muncher1.speed);
+	 gameState.muncher1.body.velocity.x = velocity.x;
+	 gameState.muncher1.body.velocity.y = velocity.y;
 	  
          //Draw the background for the fuel bar
  	 gameState.graphics.fillStyle(666666, 1);
