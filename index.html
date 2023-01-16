@@ -207,8 +207,8 @@ function update() {
 	 //}
 
 	 muncherVelocity = this.physics.velocityFromRotation(gameState.muncher1.rotation, gameState.muncher1.speed);
-	 gameState.muncher1.body.velocity.x = velocity.x;
-	 gameState.muncher1.body.velocity.y = velocity.y;
+	 gameState.muncher1.body.velocity.x = muncherVelocity.x;
+	 gameState.muncher1.body.velocity.y = muncherVelocity.y;
 	  
          //Draw the background for the fuel bar
  	 gameState.graphics.fillStyle(666666, 1);
