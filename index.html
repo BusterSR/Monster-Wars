@@ -102,7 +102,7 @@ function create() {
 	
   //Stuff for the bars
   gameState.graphics = this.add.graphics();
-  gameState.graphicHealth = this.add.graphics();
+  //gameState.graphicHealth = this.add.graphics();
 	
   //Stuff that loads if the game is on the title screen
   if(gameOn === 0){
@@ -220,8 +220,8 @@ function update() {
  	 gameState.graphics.fillRect(10, 10 + 35, 400, 20);
 	 
 	 //Draw the background for the health bar
- 	 gameState.graphicHealth.fillStyle(666666, 1);
- 	 gameState.graphicHealth.fillRect(10, 10, 400, 20);
+ 	 gameState.graphics.fillStyle(666666, 1);
+ 	 gameState.graphicsfillRect(10, 10, 400, 20);
 	  
          //Calculate the width of the full part of the fuel bar
  	 const healthPercentage = fuel / gameState.maxHealth;
@@ -236,8 +236,8 @@ function update() {
  	 gameState.graphics.fillRect(10, 10 + 35, healthBarWidth, 20);
 	  
 	 //Draw the full part of the health bar
-  	 gameState.graphicHealth.fillStyle("90EE90", 1);
- 	 gameState.graphicHealth.fillRect(10, 10, REALhealthBarWidth, 20);
+  	 gameState.graphics.fillStyle("90EE90", 1);
+ 	 gameState.graphics.fillRect(10, 10, REALhealthBarWidth, 20);
 	  
 	 //Sets the guns position
 	 //gameState.gun.x = gameState.player.x + 43
