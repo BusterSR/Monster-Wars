@@ -244,6 +244,12 @@ function update() {
 	 //gameState.gun.x = gameState.player.x + 43
 	 gameState.gun.y = gameState.player.y + 13
 	  
+	 //Getting the bounds for everything
+	 boundsP = gameState.player.getBounds();
+	 bounds1 = gameState.bullet.getBounds();
+	 bounds2 = gameState.platformy.getBounds();
+	 boundM1 = gameState.muncher1.getBounds();
+	  
 	 //Sets the guns rotation
 	 angle = Math.atan2(game.input.mousePointer.y - gameState.gun.y, game.input.mousePointer.x - gameState.gun.x);
 	 gameState.gun.rotation = angle;
@@ -283,10 +289,6 @@ function update() {
 		 gameState.bullet.visible = true
 		 gameState.bullet.x += bX
 		 gameState.bullet.y += bY
-		 boundsP = gameState.player.getBounds();
-		 bounds1 = gameState.bullet.getBounds();
-		 bounds2 = gameState.platformy.getBounds();
-		 boundM1 = gameState.muncher1.getBounds();
 		 
 		 //If enemies are hit
 		 if (bounds1.contains(boundM1.x, boundM1.y) || boundM1.contains(bounds1.x, bounds1.y)){
