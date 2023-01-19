@@ -31,6 +31,7 @@
 	    let muncherangle1
 	    let muncherVelocity
 	    let boundM1
+	    let boundsP
 	    
 	    //Used to determine whether the game is on the planet or title screen
 	    //Switch between 0 and 1 to go to title screen and planet
@@ -215,6 +216,11 @@ function update() {
 	 gameState.muncher1.body.velocity.x = muncherVelocity.x;
 	 gameState.muncher1.body.velocity.y = muncherVelocity.y;
 	  
+	 //Lets the player get hurt
+	 if (boundsP.contains(boundM1.x, boundM1.y) || boundM1.contains(boundsP.x, boundsP.y)){
+	 	health -= 1
+	 }
+	  
          //Draw the background for the fuel bar
  	 gameState.graphics.fillStyle(666666, 1);
  	 gameState.graphics.fillRect(10, 10 + 35, 400, 20);
@@ -282,6 +288,7 @@ function update() {
 		 gameState.bullet.visible = true
 		 gameState.bullet.x += bX
 		 gameState.bullet.y += bY
+		 boundsP = gameState.player.getBounds();
 		 bounds1 = gameState.bullet.getBounds();
 		 bounds2 = gameState.platformy.getBounds();
 		 boundM1 = gameState.muncher1.getBounds();
