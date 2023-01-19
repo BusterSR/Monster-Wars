@@ -216,11 +216,6 @@ function update() {
 	 gameState.muncher1.body.velocity.x = muncherVelocity.x;
 	 gameState.muncher1.body.velocity.y = muncherVelocity.y;
 	  
-	 //Lets the player get hurt
-	 if (boundsP.contains(boundM1.x, boundM1.y) || boundM1.contains(boundsP.x, boundsP.y)){
-	 	health -= 1
-	 }
-	  
          //Draw the background for the fuel bar
  	 gameState.graphics.fillStyle(666666, 1);
  	 gameState.graphics.fillRect(10, 10 + 35, 400, 20);
@@ -316,6 +311,11 @@ function update() {
   		 if(gameState.bullet.y > window.innerHeight){
     		 	 bulletOnGun = 1
 		 }
+	 }
+	 
+	 //Lets the player get hurt
+	 if (boundsP.contains(boundM1.x, boundM1.y) || boundM1.contains(boundsP.x, boundsP.y)){
+	 	health -= 1
 	 }
 	 
   }
