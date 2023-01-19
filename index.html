@@ -19,6 +19,7 @@
 	    let fuel = 200
 	    let health = 200
 	    let fuelCharge = 100
+	    let counter = 0
 	    let angle
 	    let bulletAngle
 	    let bulletOnGun
@@ -113,6 +114,7 @@ function create() {
 	fuelCharge = 100
 	bulletOnGun = 1
 	health = 200
+	counter = 0
 	  
 	//Start button code
   	gameState.startButton = this.add.sprite(window.innerWidth / 2, window.innerHeight / 2, "start").setScale(0.65);
@@ -198,6 +200,10 @@ function update() {
   //Only updates planet stuff if game is on the planet
   if(gameOn === 1){
   	 gameState.graphics.clear();
+	  
+	 //Ups the counter
+	 counter += 1
+	 console.log(counter)
 	  
 	 //Run the enemies animation
 	 gameState.muncher1.anims.play('muncher1anim', true);
