@@ -205,6 +205,12 @@ function update() {
 	 counter += 1
 	 console.log(counter)
 	  
+	 //Holds back the enemies
+	 if(counter < 500){
+		gameState.muncher1.x = window.innerWidth / 2
+		gameState.muncher1.y = 0 - window.innerWidth / 10
+	 }
+	  
 	 //Run the enemies animation
 	 gameState.muncher1.anims.play('muncher1anim', true);
 	  
