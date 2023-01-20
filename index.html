@@ -20,6 +20,8 @@
 	    let health = 200
 	    let fuelCharge = 100
 	    let counter = 0
+	    let muncherHealth1 = 20
+	    let muncherHealth2 = 20
 	    let angle
 	    let bulletAngle
 	    let bulletOnGun
@@ -118,6 +120,8 @@ function create() {
 	bulletOnGun = 1
 	health = 200
 	counter = 0
+	muncherHealth1 = 20
+	muncherHealth2 = 20
 	  
 	//Start button code
   	gameState.startButton = this.add.sprite(window.innerWidth / 2, window.innerHeight / 2, "start").setScale(0.65);
@@ -219,11 +223,11 @@ function update() {
 	 console.log(counter)
 	  
 	 //Holds back the enemies
-	 if(counter < 300){
+	 if(counter < 300 && muncherHealth1 > 0){
 		gameState.muncher1.x = window.innerWidth / 2
 		gameState.muncher1.y = 0 - window.innerHeight / 10
 	 }
-	 if (counter < 500) {
+	 if (counter < 500 && muncherHealth2 > 0) {
 		gameState.muncher2.x = window.innerWidth / 2
 		gameState.muncher2.y = 0 - window.innerHeight / 10
 	 }
@@ -325,9 +329,11 @@ function update() {
 		 
 		 //If enemies are hit
 		 if (bounds1.contains(boundM1.x, boundM1.y) || boundM1.contains(bounds1.x, bounds1.y)){
+			 muncherHealth1 -= 1
 			 bulletOnGun = 1
 		 }
 		 if (bounds1.contains(boundM2.x, boundM2.y) || boundM2.contains(bounds1.x, bounds1.y)){
+			 muncherHealth2 -= 1
 			 bulletOnGun = 1
 		 }
 		 
