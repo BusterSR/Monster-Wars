@@ -220,7 +220,7 @@ function update() {
 	  
 	 //Ups the counter
 	 counter += 1
-	 console.log(counter)
+	 //console.log(counter)
 	  
 	 //Holds back the enemies
 	 if(counter < 300 && muncherHealth1 > 0){
@@ -330,10 +330,12 @@ function update() {
 		 //If enemies are hit
 		 if (bounds1.contains(boundM1.x, boundM1.y) || boundM1.contains(bounds1.x, bounds1.y)){
 			 muncherHealth1 -= 1
+			 console.log(muncherHealth1)
 			 bulletOnGun = 1
 		 }
 		 if (bounds1.contains(boundM2.x, boundM2.y) || boundM2.contains(bounds1.x, bounds1.y)){
 			 muncherHealth2 -= 1
+			 console.log(muncherHealth2)
 			 bulletOnGun = 1
 		 }
 		 
