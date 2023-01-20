@@ -223,11 +223,11 @@ function update() {
 	 //console.log(counter)
 	  
 	 //Holds back the enemies
-	 if(counter < 300 && muncherHealth1 > 0){
+	 if(counter < 300 || muncherHealth1 <= 0){
 		gameState.muncher1.x = window.innerWidth / 2
 		gameState.muncher1.y = 0 - window.innerHeight / 10
 	 }
-	 if (counter < 500 && muncherHealth2 > 0) {
+	 if (counter < 500 || muncherHealth2 <= 0) {
 		gameState.muncher2.x = window.innerWidth / 2
 		gameState.muncher2.y = 0 - window.innerHeight / 10
 	 }
