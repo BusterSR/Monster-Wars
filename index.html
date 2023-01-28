@@ -400,6 +400,8 @@ function update() {
 	 	 health -= 1
 	 } else if (boundsP.contains(boundM2.x, boundM2.y) || boundM2.contains(boundsP.x, boundsP.y)){
 		 health -= 1
+	 } else if (boundsP.contains(boundM3.x, boundM3.y) || boundM3.contains(boundsP.x, boundsP.y)){
+		 health -= 1
 	 }
 	 
 	 //Checks if the player lost all it's health
