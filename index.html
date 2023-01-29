@@ -26,6 +26,8 @@
 	    let muncherHealth3 = 20
 	    let muncherHealth4 = 20
 	    let muncherHealth5 = 20
+	    let muncherHealth6 = 20
+	    let muncherHealth7 = 20
 	    //Muncher ^^
 	    let angle
 	    let bulletAngle
@@ -42,16 +44,22 @@
 	    let muncherangle3
 	    let muncherangle4
 	    let muncherangle5
+	    let muncherangle6
+	    let muncherangle7
 	    let muncherVelocity
 	    let muncherVelocity2
 	    let muncherVelocity3
 	    let muncherVelocity4
 	    let muncherVelocity5
+	    let muncherVelocity6
+	    let muncherVelocity7
 	    let boundM1
 	    let boundM2
 	    let boundM3
 	    let boundM4
 	    let boundM5
+	    let boundM6
+	    let boundM7
 	    //Muncher ^^
 	    let boundsP
 	    
@@ -196,6 +204,14 @@ function create() {
 	 gameState.muncher5.body.gravity.y = 0
 	 gameState.muncher5.body.velocity.y = 0;
 	 gameState.muncher5.body.setCollideWorldBounds(true);
+	 gameState.muncher6 = this.physics.add.sprite(window.innerWidth / 2, window.innerHeight / 3, 'muncher1').setScale(0.25);
+	 gameState.muncher6.body.gravity.y = 0
+	 gameState.muncher6.body.velocity.y = 0;
+	 gameState.muncher6.body.setCollideWorldBounds(true);
+	 gameState.muncher7 = this.physics.add.sprite(window.innerWidth / 2, window.innerHeight / 3, 'muncher1').setScale(0.25);
+	 gameState.muncher7.body.gravity.y = 0
+	 gameState.muncher7.body.velocity.y = 0;
+	 gameState.muncher7.body.setCollideWorldBounds(true);
 	
 	 //Making the enemies animations
 	 this.anims.create({
@@ -224,6 +240,18 @@ function create() {
     	 });
 	 this.anims.create({
       		key: 'muncher5anim',
+      		frames: this.anims.generateFrameNumbers('muncher1', { start: 0, end: 3 }),
+      		frameRate: 10,
+      		repeat: -1
+    	 });
+	 this.anims.create({
+      		key: 'muncher6anim',
+      		frames: this.anims.generateFrameNumbers('muncher1', { start: 0, end: 3 }),
+      		frameRate: 10,
+      		repeat: -1
+    	 });
+	 this.anims.create({
+      		key: 'muncher7anim',
       		frames: this.anims.generateFrameNumbers('muncher1', { start: 0, end: 3 }),
       		frameRate: 10,
       		repeat: -1
@@ -290,6 +318,14 @@ function update() {
 		gameState.muncher5.x = 0
 		gameState.muncher5.y = 0 - window.innerHeight / 10
 	 }
+	 if (counter < 1100 || muncherHealth6 <= 0) {
+		gameState.muncher6.x = window.innerWidth
+		gameState.muncher6.y = 0 - window.innerHeight / 10
+	 }
+	 if (counter < 1100 || muncherHealth7 <= 0) {
+		gameState.muncher7.x = window.innerWidth / 2
+		gameState.muncher7.y = 0 - window.innerHeight / 10
+	 }
 	  
 	 //Run the enemies animation
 	 gameState.muncher1.anims.play('muncher1anim', true);
@@ -297,6 +333,8 @@ function update() {
 	 gameState.muncher3.anims.play('muncher3anim', true);
 	 gameState.muncher4.anims.play('muncher4anim', true);
 	 gameState.muncher5.anims.play('muncher5anim', true);
+	 gameState.muncher6.anims.play('muncher6anim', true);
+	 gameState.muncher7.anims.play('muncher7anim', true);
 	  
 	 //Sets the munchers angles
 	 muncherangle1 = Math.atan2(gameState.player.y - gameState.muncher1.y, gameState.player.x - gameState.muncher1.x);
@@ -309,6 +347,10 @@ function update() {
 	 gameState.muncher4.rotation = muncherangle4;
 	 muncherangle5 = Math.atan2(gameState.player.y - gameState.muncher5.y, gameState.player.x - gameState.muncher5.x);
 	 gameState.muncher5.rotation = muncherangle5;
+	 muncherangle6 = Math.atan2(gameState.player.y - gameState.muncher6.y, gameState.player.x - gameState.muncher6.x);
+	 gameState.muncher6.rotation = muncherangle6;
+	 muncherangle7 = Math.atan2(gameState.player.y - gameState.muncher7.y, gameState.player.x - gameState.muncher7.x);
+	 gameState.muncher7.rotation = muncherangle7;
 	  
 	 //Making the enemy move towards the player
          gameState.muncher1.speed = 200
@@ -331,6 +373,14 @@ function update() {
 	 muncherVelocity5 = this.physics.velocityFromRotation(gameState.muncher5.rotation, gameState.muncher5.speed);
 	 gameState.muncher5.body.velocity.x = muncherVelocity5.x;
 	 gameState.muncher5.body.velocity.y = muncherVelocity5.y;
+	 gameState.muncher6.speed = 200
+	 muncherVelocity6 = this.physics.velocityFromRotation(gameState.muncher6.rotation, gameState.muncher6.speed);
+	 gameState.muncher6.body.velocity.x = muncherVelocity6.x;
+	 gameState.muncher6.body.velocity.y = muncherVelocity6.y;
+	 gameState.muncher7.speed = 200
+	 muncherVelocity7 = this.physics.velocityFromRotation(gameState.muncher7.rotation, gameState.muncher7.speed);
+	 gameState.muncher7.body.velocity.x = muncherVelocity7.x;
+	 gameState.muncher7.body.velocity.y = muncherVelocity7.y;
 	  
          //Draw the background for the fuel bar
  	 gameState.graphics.fillStyle(666666, 1);
@@ -369,6 +419,8 @@ function update() {
 	 boundM3 = gameState.muncher3.getBounds();
 	 boundM4 = gameState.muncher4.getBounds();
 	 boundM5 = gameState.muncher5.getBounds();
+	 boundM6 = gameState.muncher6.getBounds();
+	 boundM7 = gameState.muncher7.getBounds();
 	  
 	 //Sets the guns rotation
 	 angle = Math.atan2(game.input.mousePointer.y - gameState.gun.y, game.input.mousePointer.x - gameState.gun.x);
@@ -436,6 +488,16 @@ function update() {
 			 console.log(muncherHealth5)
 			 bulletOnGun = 1
 		 }
+		 if (bounds1.contains(boundM6.x, boundM6.y) || boundM6.contains(bounds1.x, bounds1.y)){
+			 muncherHealth6 -= 1
+			 console.log(muncherHealth6)
+			 bulletOnGun = 1
+		 }
+		 if (bounds1.contains(boundM7.x, boundM7.y) || boundM7.contains(bounds1.x, bounds1.y)){
+			 muncherHealth7 -= 1
+			 console.log(muncherHealth7)
+			 bulletOnGun = 1
+		 }
 		 
 		 //If island is hit
 		 if (bounds1.contains(bounds2.x, bounds2.y) || bounds2.contains(bounds1.x, bounds1.y)){
@@ -467,6 +529,10 @@ function update() {
 	 } else if (boundsP.contains(boundM4.x, boundM4.y) || boundM4.contains(boundsP.x, boundsP.y)){
 		 health -= 1
 	 } else if (boundsP.contains(boundM5.x, boundM5.y) || boundM5.contains(boundsP.x, boundsP.y)){
+		 health -= 1
+	 } else if (boundsP.contains(boundM6.x, boundM6.y) || boundM6.contains(boundsP.x, boundsP.y)){
+		 health -= 1
+	 } else if (boundsP.contains(boundM7.x, boundM7.y) || boundM7.contains(boundsP.x, boundsP.y)){
 		 health -= 1
 	 }
 	 
