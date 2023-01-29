@@ -20,6 +20,7 @@
 	    let health = 200
 	    let fuelCharge = 100
 	    let counter = 0
+	    let round = 1
 	    //Muncher vv
 	    let muncherHealth1 = 20
 	    let muncherHealth2 = 20
@@ -144,8 +145,16 @@ function create() {
 	bulletOnGun = 1
 	health = 200
 	counter = 0
+	//MONSTER vv
 	muncherHealth1 = 20
 	muncherHealth2 = 20
+	muncherHealth3 = 20
+	muncherHealth4 = 20
+	muncherHealth5 = 20
+	muncherHealth6 = 20
+	muncherHealth7 = 20
+	//MONSTER ^^
+	round = 1
 	  
 	//Start button code
   	gameState.startButton = this.add.sprite(window.innerWidth / 2, window.innerHeight / 2, "start").setScale(0.65);
@@ -298,35 +307,36 @@ function update() {
 	 //console.log(counter)
 	  
 	 //Holds back the enemies
-	 if(counter < 300 || muncherHealth1 <= 0){
-		gameState.muncher1.x = window.innerWidth / 2
-		gameState.muncher1.y = 0 - window.innerHeight / 10
+	 if(round === 1){
+	 	if(counter < 300 || muncherHealth1 <= 0){
+			gameState.muncher1.x = window.innerWidth / 2
+			gameState.muncher1.y = 0 - window.innerHeight / 10
+	 	}
+	 	if (counter < 500 || muncherHealth2 <= 0) {
+			gameState.muncher2.x = window.innerWidth
+			gameState.muncher2.y = 0 - window.innerHeight / 10
+	 	}
+	 	if (counter < 700 || muncherHealth3 <= 0) {
+			gameState.muncher3.x = 0
+			gameState.muncher3.y = 0 - window.innerHeight / 10
+	 	}
+	 	if (counter < 900 || muncherHealth4 <= 0) {
+			gameState.muncher4.x = window.innerWidth
+			gameState.muncher4.y = 0 - window.innerHeight / 10
+	 	}
+	 	if (counter < 1100 || muncherHealth5 <= 0) {
+			gameState.muncher5.x = 0
+			gameState.muncher5.y = 0 - window.innerHeight / 10
+	 	}
+	 	if (counter < 1100 || muncherHealth6 <= 0) {
+			gameState.muncher6.x = window.innerWidth
+			gameState.muncher6.y = 0 - window.innerHeight / 10
+	 	}
+	 	if (counter < 1200 || muncherHealth7 <= 0) {
+			gameState.muncher7.x = window.innerWidth / 2
+			gameState.muncher7.y = 0 - window.innerHeight / 10
+		}
 	 }
-	 if (counter < 500 || muncherHealth2 <= 0) {
-		gameState.muncher2.x = window.innerWidth
-		gameState.muncher2.y = 0 - window.innerHeight / 10
-	 }
-	 if (counter < 700 || muncherHealth3 <= 0) {
-		gameState.muncher3.x = 0
-		gameState.muncher3.y = 0 - window.innerHeight / 10
-	 }
-	 if (counter < 900 || muncherHealth4 <= 0) {
-		gameState.muncher4.x = window.innerWidth
-		gameState.muncher4.y = 0 - window.innerHeight / 10
-	 }
-	 if (counter < 1100 || muncherHealth5 <= 0) {
-		gameState.muncher5.x = 0
-		gameState.muncher5.y = 0 - window.innerHeight / 10
-	 }
-	 if (counter < 1100 || muncherHealth6 <= 0) {
-		gameState.muncher6.x = window.innerWidth
-		gameState.muncher6.y = 0 - window.innerHeight / 10
-	 }
-	 if (counter < 1200 || muncherHealth7 <= 0) {
-		gameState.muncher7.x = window.innerWidth / 2
-		gameState.muncher7.y = 0 - window.innerHeight / 10
-	 }
-	  
 	 //Run the enemies animation
 	 gameState.muncher1.anims.play('muncher1anim', true);
 	 gameState.muncher2.anims.play('muncher2anim', true);
