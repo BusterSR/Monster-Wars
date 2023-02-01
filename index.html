@@ -339,6 +339,7 @@ function update() {
 		if (counter > 1500 && muncherHealth1 <= 0 && muncherHealth2 <= 0 && muncherHealth3 <= 0 && muncherHealth4 <= 0 && muncherHealth5 <= 0 && muncherHealth6 <= 0 && muncherHealth7 <= 0){
 			round = 2
 			counter = 0
+			console.log('round ' + round)
 		}
 	 }
 	 //Run the enemies animation
@@ -479,37 +480,30 @@ function update() {
 		 //If enemies are hit
 		 if (bounds1.contains(boundM1.x, boundM1.y) || boundM1.contains(bounds1.x, bounds1.y)){
 			 muncherHealth1 -= 1
-			 console.log(muncherHealth1)
 			 bulletOnGun = 1
 		 }
 		 if (bounds1.contains(boundM2.x, boundM2.y) || boundM2.contains(bounds1.x, bounds1.y)){
 			 muncherHealth2 -= 1
-			 console.log(muncherHealth2)
 			 bulletOnGun = 1
 		 }
 		 if (bounds1.contains(boundM3.x, boundM3.y) || boundM3.contains(bounds1.x, bounds1.y)){
 			 muncherHealth3 -= 1
-			 console.log(muncherHealth3)
 			 bulletOnGun = 1
 		 }
 		 if (bounds1.contains(boundM4.x, boundM4.y) || boundM4.contains(bounds1.x, bounds1.y)){
 			 muncherHealth4 -= 1
-			 console.log(muncherHealth4)
 			 bulletOnGun = 1
 		 }
 		 if (bounds1.contains(boundM5.x, boundM5.y) || boundM5.contains(bounds1.x, bounds1.y)){
 			 muncherHealth5 -= 1
-			 console.log(muncherHealth5)
 			 bulletOnGun = 1
 		 }
 		 if (bounds1.contains(boundM6.x, boundM6.y) || boundM6.contains(bounds1.x, bounds1.y)){
 			 muncherHealth6 -= 1
-			 console.log(muncherHealth6)
 			 bulletOnGun = 1
 		 }
 		 if (bounds1.contains(boundM7.x, boundM7.y) || boundM7.contains(bounds1.x, bounds1.y)){
 			 muncherHealth7 -= 1
-			 console.log(muncherHealth7)
 			 bulletOnGun = 1
 		 }
 		 
