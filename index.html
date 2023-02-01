@@ -336,6 +336,10 @@ function update() {
 			gameState.muncher7.x = window.innerWidth / 2
 			gameState.muncher7.y = 0 - window.innerHeight / 10
 		}
+		if (counter > 1500 && muncherHealth1 <= 0 && muncherHealth2 <= 0 && muncherHealth3 <= 0 && muncherHealth4 <= 0 && muncherHealth5 <= 0 && muncherHealth6 <= 0 && muncherHealth7 <= 0){
+			round = 2
+			counter = 0
+		}
 	 }
 	 //Run the enemies animation
 	 gameState.muncher1.anims.play('muncher1anim', true);
