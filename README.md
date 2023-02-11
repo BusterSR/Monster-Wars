@@ -1,4 +1,4 @@
-A game about fighting monsters (work in progress)
+An action packed game similar to Doom and Enter The Gungeon (work in progress)
 
 Monster Wars
 https://monster-wars.netlify.app/
