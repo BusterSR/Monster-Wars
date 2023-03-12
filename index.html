@@ -435,6 +435,48 @@ function update() {
 			muncherHealth6 = 20
 			muncherHealth7 = 20
 		}
+	 } else if(round === 4){
+		 if(counter < 800 || muncherHealth1 <= 0){
+			gameState.muncher1.x = window.innerWidth / 2
+			gameState.muncher1.y = 0 - window.innerHeight / 10
+	 	}
+	 	if (counter < 500 || muncherHealth2 <= 0) {
+			gameState.muncher2.x = window.innerWidth
+			gameState.muncher2.y = 0 - window.innerHeight / 10
+	 	}
+	 	if (counter < 400 || muncherHealth3 <= 0) {
+			gameState.muncher3.x = 0
+			gameState.muncher3.y = 0 - window.innerHeight / 10
+	 	}
+	 	if (counter < 400 || muncherHealth4 <= 0) {
+			gameState.muncher4.x = window.innerWidth
+			gameState.muncher4.y = 0 - window.innerHeight / 10
+	 	}
+	 	if (counter < 700 || muncherHealth5 <= 0) {
+			gameState.muncher5.x = 0
+			gameState.muncher5.y = 0 - window.innerHeight / 10
+	 	}
+	 	if (counter < 800 || muncherHealth6 <= 0) {
+			gameState.muncher6.x = window.innerWidth
+			gameState.muncher6.y = 0 - window.innerHeight / 10
+	 	}
+	 	if (counter < 650 || muncherHealth7 <= 0) {
+			gameState.muncher7.x = window.innerWidth / 2
+			gameState.muncher7.y = 0 - window.innerHeight / 10
+		}
+		if (counter > 1000 && muncherHealth1 <= 0 && muncherHealth2 <= 0 && muncherHealth3 <= 0 && muncherHealth4 <= 0 && muncherHealth5 <= 0 && muncherHealth6 <= 0 && muncherHealth7 <= 0){
+			round = 5
+			counter = 0
+			console.clear()
+			console.log('round ' + round)
+			muncherHealth1 = 20
+			muncherHealth2 = 20
+			muncherHealth3 = 20
+			muncherHealth4 = 20
+			muncherHealth5 = 20
+			muncherHealth6 = 20
+			muncherHealth7 = 20
+		}
 	 }
 	 //Run the enemies animation
 	 gameState.muncher1.anims.play('muncher1anim', true);
