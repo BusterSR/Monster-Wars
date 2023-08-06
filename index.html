@@ -20,6 +20,7 @@
 	    let fuelCharge = 100
 	    let counter = 0
 	    let round = 1
+	    let roundsLived = 1
 	    //Muncher vv
 	    let muncherHealth1 = 20
 	    let muncherHealth2 = 20
@@ -154,6 +155,8 @@ function create() {
 	muncherHealth7 = 20
 	//MONSTER ^^
 	round = 1
+	roundsLived = 1
+	alert("You survived " + roundsLived + " rounds")
 	  
 	//Start button code
   	gameState.startButton = this.add.sprite(window.innerWidth / 2, window.innerHeight / 2, "start").setScale(0.65);
@@ -339,6 +342,8 @@ function update() {
 		}
 		if (counter > 1500 && muncherHealth1 <= 0 && muncherHealth2 <= 0 && muncherHealth3 <= 0 && muncherHealth4 <= 0 && muncherHealth5 <= 0 && muncherHealth6 <= 0 && muncherHealth7 <= 0){
 			round = 2
+			roundsLived += 1
+			console.log('total rounds ' + roundsLived)
 			counter = 0
 			console.clear()
 			console.log('round ' + round)
@@ -381,6 +386,8 @@ function update() {
 		}
 		if (counter > 1400 && muncherHealth1 <= 0 && muncherHealth2 <= 0 && muncherHealth3 <= 0 && muncherHealth4 <= 0 && muncherHealth5 <= 0 && muncherHealth6 <= 0 && muncherHealth7 <= 0){
 			round = 3
+			roundsLived += 1
+			console.log('total rounds ' + roundsLived)
 			counter = 0
 			console.clear()
 			console.log('round ' + round)
@@ -423,6 +430,8 @@ function update() {
 		}
 		if (counter > 1100 && muncherHealth1 <= 0 && muncherHealth2 <= 0 && muncherHealth3 <= 0 && muncherHealth4 <= 0 && muncherHealth5 <= 0 && muncherHealth6 <= 0 && muncherHealth7 <= 0){
 			round = 4
+			roundsLived += 1
+			console.log('total rounds ' + roundsLived)
 			counter = 0
 			console.clear()
 			console.log('round ' + round)
@@ -465,6 +474,8 @@ function update() {
 		}
 		if (counter > 1000 && muncherHealth1 <= 0 && muncherHealth2 <= 0 && muncherHealth3 <= 0 && muncherHealth4 <= 0 && muncherHealth5 <= 0 && muncherHealth6 <= 0 && muncherHealth7 <= 0){
 			round = 3 //last change here
+			roundsLived += 1
+			console.log('total rounds ' + roundsLived)
 			counter = 0
 			console.clear()
 			console.log('round ' + round)
