@@ -156,7 +156,7 @@ function create() {
 	//MONSTER ^^
 	round = 1
 	roundsLived = 1
-	alert("You survived " + roundsLived + " rounds")
+	//alert("You made it to round " + roundsLived)
 	  
 	//Start button code
   	gameState.startButton = this.add.sprite(window.innerWidth / 2, window.innerHeight / 2, "start").setScale(0.65);
@@ -693,6 +693,7 @@ function update() {
 	 //Checks if the player lost all it's health
 	 if (health <= 0){
 		 gameOn = 0
+		 alert("You made it to round " + roundsLived)
 		 this.scene.restart(this, {}, 'previous')
 	 }
 	 
@@ -734,6 +735,7 @@ function update() {
 		//this.cameras.main.shake(1000, .01, false, function(camera, progress) {this.scene.restart(this, {}, 'previous')})
 		this.cameras.main.fade(200, 0, 0, 0, false, function(camera, progress) {if(progress > .9){
 			gameOn = 0
+			alert("You made it to round " + roundsLived)
 			this.scene.restart(this, {}, 'previous')
 		}})
   	}
