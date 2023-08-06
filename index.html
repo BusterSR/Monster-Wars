@@ -126,6 +126,9 @@ const gameState = {
 
 //The create function
 function create() {
+
+  // Create a reference to the loaded music
+  music = game.sound.add('backgroundMusic', { loop: true }); // { loop: true } will make the music loop continuously
    
   //Not in use
   //var bg = this.add.image(window.innerWidth / 2, window.innerHeight / 2, 'bg');
@@ -198,6 +201,9 @@ function create() {
 
   //Loads enemy stuff
   if(gameOn === 1) {
+	 //Starting the jams
+	 music.play();
+	  
 	 //Loading the enemies
 	 gameState.muncher1 = this.physics.add.sprite(window.innerWidth / 2, window.innerHeight / 3, 'muncher1').setScale(0.25);
 	 gameState.muncher1.body.gravity.y = 0
